@@ -1,0 +1,88 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css2?family=Arvo&family=Josefin+Sans:wght@200;400&display=swap");
+
+/* Fonts */
+$font_arvo: "Arvo", serif;
+$font_josefin: "Josefin Sans", sans-serif;
+
+/* Dark Mode */
+$grey_light: #f2f7f9;
+$grey: #ecedf3;
+$color_white: #fff;
+$color_second_title: #fff;
+$color_info_dark: #7d8da1;
+$color_info_light: #dce1eb;
+$color_project_title: #2196f3;
+$color_light: rgba(132, 139, 200, 0.18);
+$color_primary_variant: #111e88;
+$color_dark_variant: #677483;
+$color_background: #0d012c;
+$color_title: #2196f3;
+$color_card2: #14143a;
+
+$color_button: linear-gradient(to left, #17c0e9, #c96ddd, #f45162);
+$color_special_color: #eff30e;
+$color_button_hover: #59c378;
+
+$color_background_2: #0d012c;
+$color_icon_background: #464a68;
+$color_card_background: #1f0a44 0;
+
+$color_card: #313552;
+$card_border_radius: 2rem;
+$border_radius_1: 0.4rem;
+$border_radius_2: 0.8rem;
+$border_radius_3: 1.2rem;
+
+$card_padding: 1.8rem;
+$padding_1: 1.2rem;
+
+$box_shadow: 0.2rem 3rem var(var($color_light));
+$card_box_shadow: 0px 30px 60px 0px rgb(0 0 0 / 10%) !important;
+$card_box_shadow_hover: 0px 30px 60px 0px rgb(0 0 0 / 10%) !important;
+
+
+/* Light Mode */
+$grey_light: #f2f7f9;
+$grey: #ecedf3;
+$color_white: #1d1b1b;
+$color_second_title: #ff5652;
+$color_info_dark: #7d8da1;
+$color_info_light: #050748;
+$color_dark: #161818;
+$color_light: #848bc82e;
+$color_primary_variant: #111e88;
+$color_dark_variant: #677483;
+$color_background: #f0f1f7;
+$color_title: #050748 !important;
+$color_button: linear-gradient(
+  to right,
+  #fb7878 0%,
+  #ffaf74 100%
+) !important;
+$btn_background: linear-gradient(
+  90deg,
+  rgba(194, 120, 251, 1) 0%,
+  rgba(249, 115, 255, 1) 100%
+);
+$color_special_color: var($color-title);
+$color_background_2: var($color-background);
+$color_icon_background: #464a68;
+$color_card_background: #ffffff;
+$color_bars: linear-gradient(to right, #673ab7 0, #2196f3 100%);
+$color_button_hover: linear-gradient(
+  to right,
+  #fb7878 0%,
+  #ffaf74 100%
+) !important;
+$color_card2: #ffffff;
+$card_border_radius: 2rem;
+$border_radius_1: 0.4rem;
+$border_radius_2: 0.8rem;
+$border_radius_3: 1.2rem;
+$color_card: rgb(240, 240, 245);
+$card_padding: 1.8rem;
+$padding_1: 1.2rem;
+$box_shadow: 0.2rem 3rem var(var($color-light));
+$card_box_shadow: 0px 30px 60px 0px rgb(0 0 0 / 10%) !important;
+$card_box_shadow_hover: 0px 30px 60px 0px rgb(0 0 0 / 10%) !important;

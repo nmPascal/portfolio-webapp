@@ -1,0 +1,16 @@
+@mixin flex($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin dimensions($width: 100%, $height: auto) {
+    width: $width;
+    height: $height;
+}
+
+@mixin theme($bg: white, $fg: #333) {
+    background: $bg;
+    color: $fg;
+}
