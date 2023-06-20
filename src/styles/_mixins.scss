@@ -9,8 +9,3 @@
     width: $width;
     height: $height;
 }
-
-@mixin theme($bg: white, $fg: #333) {
-    background: $bg;
-    color: $fg;
-}

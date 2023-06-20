@@ -1,3 +1,83 @@
 .navbar {
-    border: 1px solid #f00;
+    @include dimensions($height: $navbar_height);
+    @include flex($justify: space-between);
+    padding: 0 5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all .5s;
+
+    .navbar__logo {
+        @include flex();
+
+        img {
+            @include dimensions($width: 30px);
+        }
+
+        .navbar__logo__title {
+            font-family: $font_fira_code;
+            font-size: 1.5em;
+            color: $color_green;
+            margin-left: .5rem;
+        }
+
+        .navbar__logo__blink {
+            color: #272f38;
+            font-size: 1.8em;
+            font-weight: 600;
+            animation: blink-animation 1s steps(5, start) infinite;
+        }
+
+    }
+
+    .navbar__links {
+        @include flex($align: center);
+        ul {
+            @include flex();
+            text-transform: uppercase;
+            font-family: $font_share_tech;
+            font-size: 1.05em;
+            li {
+                margin: 0 1rem;
+                &:first-of-type {
+                    margin-left: 0;
+                }
+
+                a {
+                    &:hover {
+                        color: $color_blue;
+                    }
+                }
+
+                .navbar__link__active {
+                    color: $color_green;
+                }
+            }
+        }
+
+        .navbar__github__link {
+            @include flex();
+            margin-left: 2rem;
+
+            a {
+                @include flex();
+            }
+        }
+
+        .navbar__button {
+            @include flex();
+            margin-left: 2rem;
+            button {
+                @include flex();
+                padding: 1rem 1.8rem;
+                border-radius: 5px;
+                font-size: 1.1em;
+                background: $color_green;
+                color: $color_white;
+            }
+        }
+
+
+    }
 }
