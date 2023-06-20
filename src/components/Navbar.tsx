@@ -10,6 +10,8 @@ import styles from "../styles/main.module.scss";
 export const Navbar: FC = (): JSX.Element => {
     const navRef = useRef(null);
     const [isPageUp, setIsPageUp] = useState<boolean>(true);
+    const [isNavOpen, setIsNavOpen] = useState(false);
+
 
     const _onScrollHandleNavbarStyle = (): void => {
         if (window.scrollY > 0) {
@@ -34,7 +36,10 @@ export const Navbar: FC = (): JSX.Element => {
                 <h1 className={styles.navbar__logo__title}>{SettingsHelper.getString("navbar_title")}</h1>
                 <span className={styles.navbar__logo__blink}>_</span>
             </div>
-            <div className={styles.navbar__links}>
+            <div
+                className={styles.navbar__links}
+                style={isNavOpen ? {top: "80px"} : {}}
+            >
                 <ul>
                     {SettingsHelper.getRoutes().map(({ path, name }, idx) => (
                         <li key={idx}>
@@ -63,6 +68,19 @@ export const Navbar: FC = (): JSX.Element => {
                     </button>
                 </div>
             </div>
+            <label className={styles.navbar__hamburger}>
+                <input type="checkbox" checked={isNavOpen} onChange={() => setIsNavOpen(!isNavOpen)}/>
+                <svg viewBox="0 0 32 32">
+                    <path
+                        className={`${styles.line} ${styles.line_top_bottom}`}
+                        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+                    />
+                    <path
+                        className={styles.line}
+                        d="M7 16 27 16"
+                    />
+                </svg>
+            </label>
         </nav>
     );
 };
