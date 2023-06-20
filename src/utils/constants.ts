@@ -5,6 +5,7 @@ import { About, Contact, Home, MyWorks, Skills } from "../pages";
 export const strings: IStrings = {
     navbar_logo_url: "https://code.google.com/images/developers.png",
     navbar_title: "Pascal.hector",
+    me_github_url: "https://github.com/nmPascal",
 };
 
 export const routes: IRoute[] = [

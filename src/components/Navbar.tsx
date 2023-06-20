@@ -30,7 +30,11 @@ export const Navbar: FC = (): JSX.Element => {
                     ))}
                 </ul>
                 <div className={styles.navbar__github__link}>
-                    <a href="" target="_blank" rel="noreferrer">
+                    <a
+                        href={SettingsHelper.getString("me_github_url")}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <AiFillGithub size={25} color={"rgb(146, 146, 146)"}/>
                     </a>
                 </div>
