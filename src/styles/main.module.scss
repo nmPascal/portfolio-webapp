@@ -6,9 +6,33 @@
 
 // Components
 @import "./components/Navbar.module.scss";
-@import "./components/Home.module.scss";
-@import "./components/About.module.scss";
-@import "./components/Skills.module.scss";
-@import "./components/MyWorks.module.scss";
-@import "./components/Contact.module.scss";
+@import "./pages/Home.module.scss";
+@import "./pages/About.module.scss";
+@import "./pages/Skills.module.scss";
+@import "./pages/MyWorks.module.scss";
+@import "./pages/Contact.module.scss";
 
+.home {
+    background-color: blue;
+    height: 100vh;
+}
+
+.about {
+    background-color: red;
+    height: 100vh;
+}
+
+.skills {
+    background-color: green;
+    height: 100vh;
+}
+
+.myWorks {
+    background-color: yellow;
+    height: 100vh;
+}
+
+.contact {
+    background-color: purple;
+    height: 100vh;
+}

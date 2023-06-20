@@ -1,3 +1,5 @@
+import { FC } from "react";
+
 export interface ISettingsHelperProps {
     getRoutes: () => IRoute[];
     getString: (key: string) => string;
@@ -10,4 +12,5 @@ export interface IStrings {
 export interface IRoute {
     name: string;
     path: string;
+    page: FC;
 }

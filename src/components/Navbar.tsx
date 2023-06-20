@@ -2,10 +2,10 @@ import { FC } from "react";
 
 import { SettingsHelper } from "../helpers";
 
-import { HashLink as Link } from "react-router-hash-link";
 import { AiFillGithub } from "react-icons/ai";
 
 import styles from "../styles/main.module.scss";
+import { NavLink } from "react-router-dom";
 
 export const Navbar: FC = (): JSX.Element => {
     return (
@@ -14,14 +14,15 @@ export const Navbar: FC = (): JSX.Element => {
                 {SettingsHelper.getString("navbar_logo")}
             </div>
             <ul>
-                {SettingsHelper.getRoutes().map((route, idx) => (
+                {SettingsHelper.getRoutes().map(({ path, name }, idx) => (
                     <li key={idx}>
-                        <Link
-                            to={route.path}
-                            smooth
+                        <NavLink
+                            to={path}
+                            title={name}
+                            className={({ isActive }) => isActive ? styles.navbar__link__active : ""}
                         >
-                            {route.name}
-                        </Link>
+                            {name}
+                        </NavLink>
                     </li>
                 ))}
             </ul>

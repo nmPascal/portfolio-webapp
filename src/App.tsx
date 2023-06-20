@@ -1,21 +1,18 @@
 import { BrowserRouter } from "react-router-dom";
 
-import { Home, Layout, Navbar } from "./components";
-import { About } from "./components/About";
-import { Skills } from "./components/Skills";
-import { MyWorks } from "./components/MyWorks";
-import { Contact } from "./components/Contact";
+import { Layout, Navbar } from "./components";
+import { index as Routes } from "./routes";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
+
     return (
         <Layout>
             <BrowserRouter>
                 <Navbar />
-                <Home />
-                <About />
-                <Skills />
-                <MyWorks />
-                <Contact />
+                <AnimatePresence mode="wait">
+                    <Routes />
+                </AnimatePresence>
             </BrowserRouter>
         </Layout>
     );

@@ -1,28 +1,36 @@
+import { IRoute, IStrings } from "../interfaces";
 
-import { IRoute, IStrings } from "../interfaces";export const strings: IStrings = {
+import { About, Contact, Home, MyWorks, Skills } from "../pages";
+
+export const strings: IStrings = {
     navbar_logo: "Pascal Hector",
 };
 
 export const routes: IRoute[] = [
     {
         name: "Home",
-        path: "/#home",
+        path: "/",
+        page: Home,
     },
     {
         name: "About",
-        path: "/#about",
+        path: "/about",
+        page: About,
         
     },
     {
         name: "Skills",
-        path: "/#skills",
+        path: "/skills",
+        page: Skills,
     },
     {
         name: "My Works",
-        path: "/#my-works",
+        path: "/my-works",
+        page: MyWorks
     },
     {
         name: "Contact",
-        path: "/#contact",
+        path: "/contact",
+        page: Contact,
     }
 ];
