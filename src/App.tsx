@@ -1,8 +1,8 @@
 import { BrowserRouter } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 import { Layout, Navbar } from "./components";
 import { index as Routes } from "./routes";
-import { AnimatePresence } from "framer-motion";
 
 function App() {
 

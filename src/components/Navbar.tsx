@@ -2,10 +2,10 @@ import { FC } from "react";
 
 import { SettingsHelper } from "../helpers";
 
+import { NavLink } from "react-router-dom";
 import { AiFillGithub } from "react-icons/ai";
 
 import styles from "../styles/main.module.scss";
-import { NavLink } from "react-router-dom";
 
 export const Navbar: FC = (): JSX.Element => {
     return (
