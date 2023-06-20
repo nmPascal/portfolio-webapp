@@ -3,9 +3,13 @@ import { IRoute, IStrings } from "../interfaces";
 import { About, Contact, Home, MyWorks, Skills } from "../pages";
 
 export const strings: IStrings = {
+    // Global
+    me_github_url: "https://github.com/nmPascal",
+
+    // Navbar
     navbar_logo_url: "https://code.google.com/images/developers.png",
     navbar_title: "Pascal.hector",
-    me_github_url: "https://github.com/nmPascal",
+    navbar_button_text: "Contact me",
 };
 
 export const routes: IRoute[] = [

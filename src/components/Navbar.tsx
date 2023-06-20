@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 
 import { SettingsHelper } from "../helpers";
 
@@ -8,8 +8,27 @@ import { AiFillGithub } from "react-icons/ai";
 import styles from "../styles/main.module.scss";
 
 export const Navbar: FC = (): JSX.Element => {
+    const navRef = useRef(null);
+    const [isPageUp, setIsPageUp] = useState<boolean>(true);
+
+    const _onScrollHandleNavbarStyle = (): void => {
+        if (window.scrollY > 0) {
+            setIsPageUp(true);
+        } else {
+            setIsPageUp(false);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", _onScrollHandleNavbarStyle);
+    }, []);
+
     return (
-        <div className={styles.navbar}>
+        <nav
+            ref={navRef}
+            className={styles.navbar}
+            style={isPageUp ? {backgroundColor: "#04133a"} : {}}
+        >
             <div className={styles.navbar__logo}>
                 <img src={SettingsHelper.getString("navbar_logo_url")} alt="Logo" />
                 <h1 className={styles.navbar__logo__title}>{SettingsHelper.getString("navbar_title")}</h1>
@@ -40,10 +59,10 @@ export const Navbar: FC = (): JSX.Element => {
                 </div>
                 <div className={styles.navbar__button}>
                     <button>
-                        Contact Me
+                        {SettingsHelper.getString("navbar_button_text")}
                     </button>
                 </div>
             </div>
-        </div>
+        </nav>
     );
 };
