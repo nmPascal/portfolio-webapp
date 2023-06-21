@@ -2,14 +2,15 @@ import { FC, useEffect, useRef, useState } from "react";
 
 import { SettingsHelper } from "../helpers";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { AiFillGithub } from "react-icons/ai";
 
 import styles from "../styles/main.module.scss";
 
 export const Navbar: FC = (): JSX.Element => {
     const navRef = useRef(null);
-    const [isPageUp, setIsPageUp] = useState<boolean>(true);
+    const location = useLocation();
+    const [isPageUp, setIsPageUp] = useState<boolean>(false);
     const [isNavOpen, setIsNavOpen] = useState(false);
 
 
@@ -25,6 +26,10 @@ export const Navbar: FC = (): JSX.Element => {
         window.addEventListener("scroll", _onScrollHandleNavbarStyle);
     }, []);
 
+    useEffect(() => {
+        setIsNavOpen(false);
+    }, [location]);
+
     return (
         <nav
             ref={navRef}
@@ -38,7 +43,7 @@ export const Navbar: FC = (): JSX.Element => {
             </div>
             <div
                 className={styles.navbar__links}
-                style={isNavOpen ? {top: "80px"} : {}}
+                style={isNavOpen ? {transform: "scale(1)"} : {}}
             >
                 <ul>
                     {SettingsHelper.getRoutes().map(({ path, name }, idx) => (
