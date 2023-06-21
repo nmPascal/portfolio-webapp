@@ -12,10 +12,6 @@
         padding: 0 2rem;
     }
 
-    @media screen and (max-width: 950px) {
-        @include dimensions($height: 80px);
-    }
-
     .navbar__logo {
         @include flex();
 

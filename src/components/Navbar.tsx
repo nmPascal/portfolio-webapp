@@ -13,7 +13,6 @@ export const Navbar: FC = (): JSX.Element => {
     const [isPageUp, setIsPageUp] = useState<boolean>(false);
     const [isNavOpen, setIsNavOpen] = useState(false);
 
-
     const _onScrollHandleNavbarStyle = (): void => {
         if (window.scrollY > 0) {
             setIsPageUp(true);
@@ -60,7 +59,8 @@ export const Navbar: FC = (): JSX.Element => {
                 </ul>
                 <div className={styles.navbar__github__link}>
                     <a
-                        href={SettingsHelper.getString("me_github_url")}
+                        title={SettingsHelper.getString("navbar_github_repos_title")}
+                        href={SettingsHelper.getString("navbar_github_repos")}
                         target="_blank"
                         rel="noreferrer"
                     >
