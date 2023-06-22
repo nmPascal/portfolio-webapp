@@ -1,5 +1,3 @@
-import { FC } from "react";
-
 // packages
 import { BrowserRouter } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
@@ -8,7 +6,7 @@ import { AnimatePresence } from "framer-motion";
 import { Layout, Navbar } from "./components";
 import { index as Routes } from "./routes";
 
-const App: FC = (): JSX.Element => {
+function App() {
     return (
         <Layout>
             <BrowserRouter>
@@ -19,6 +17,6 @@ const App: FC = (): JSX.Element => {
             </BrowserRouter>
         </Layout>
     );
-};
+}
 
 export default App;
