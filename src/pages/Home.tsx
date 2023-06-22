@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
 // helpers
 import { SettingsHelper } from "../helpers";
@@ -8,8 +8,14 @@ import { NavLink } from "react-router-dom";
 
 // styles
 import styles from "../styles/main.module.scss";
+import { useGraphQLServer } from "../hooks";
 
 export const Home: FC = (): JSX.Element => {
+    const { getServerData } = useGraphQLServer(); 
+
+    useEffect(() => {
+        getServerData();
+    }, []);
 
     return (
         <div className={styles.home}>

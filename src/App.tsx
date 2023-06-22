@@ -1,3 +1,6 @@
+// utils
+import { client } from "./utils";
+
 // packages
 import { BrowserRouter } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
@@ -5,6 +8,7 @@ import { AnimatePresence } from "framer-motion";
 // components
 import { Layout, Navbar } from "./components";
 import { index as Routes } from "./routes";
+import { ApolloProvider } from "@apollo/client";
 
 function App() {
     return (
@@ -12,7 +16,9 @@ function App() {
             <BrowserRouter>
                 <Navbar />
                 <AnimatePresence mode="wait">
-                    <Routes />
+                    <ApolloProvider client={client}>
+                        <Routes />
+                    </ApolloProvider>
                 </AnimatePresence>
             </BrowserRouter>
         </Layout>
