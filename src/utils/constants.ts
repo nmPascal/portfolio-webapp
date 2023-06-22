@@ -1,5 +1,7 @@
+// interfaces
 import { ISocialNetwork, IStrings } from "../interfaces";
 
+// packages
 import { FaXing, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { SiIndeed } from "react-icons/si";
 import { AiOutlineCodeSandbox, AiFillGithub } from "react-icons/ai";

@@ -1,5 +1,6 @@
 import { FC } from "react";
 
+// styles
 import styles from "../styles/main.module.scss";
 
 export const Contact: FC = (): JSX.Element => {

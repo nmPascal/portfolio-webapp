@@ -1,11 +1,14 @@
+import { FC } from "react";
+
+// packages
 import { BrowserRouter } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
+// components
 import { Layout, Navbar } from "./components";
 import { index as Routes } from "./routes";
 
-function App() {
-
+const App: FC = (): JSX.Element => {
     return (
         <Layout>
             <BrowserRouter>
@@ -16,6 +19,6 @@ function App() {
             </BrowserRouter>
         </Layout>
     );
-}
+};
 
 export default App;

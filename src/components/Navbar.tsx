@@ -1,10 +1,13 @@
 import { FC, useEffect, useRef, useState } from "react";
 
+// helpers
 import { SettingsHelper } from "../helpers";
 
+// packages
 import { NavLink, useLocation } from "react-router-dom";
 import { AiFillGithub } from "react-icons/ai";
 
+// styles
 import styles from "../styles/main.module.scss";
 
 export const Navbar: FC = (): JSX.Element => {

@@ -1,7 +1,10 @@
-import { IRoute, ISettingsHelperProps, ISocialNetwork } from "../interfaces";
-
+// utils
 import { socialNetworks, strings } from "../utils";
 
+// interfaces
+import { IRoute, ISettingsHelperProps, ISocialNetwork } from "../interfaces";
+
+// pages
 import { About, Contact, Home, MyWorks, Skills } from "../pages";
 
 

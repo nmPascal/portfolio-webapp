@@ -1,9 +1,12 @@
 import { FC } from "react";
 
+// helpers
 import { SettingsHelper } from "../helpers";
 
+// packages
 import { NavLink } from "react-router-dom";
 
+// styles
 import styles from "../styles/main.module.scss";
 
 export const Home: FC = (): JSX.Element => {
@@ -43,7 +46,7 @@ export const Home: FC = (): JSX.Element => {
                     </div>
                 </div>
                 <div className={styles.home__image}>
-                    <img src="./assets/images/15.png" alt="" />
+                    <img src="./assets/images/sitting_on_desk.png" alt="" />
                 </div>
             </div>
         </div>

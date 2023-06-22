@@ -1,8 +1,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { FC, useEffect, useState } from "react";
 
+// helpers
 import { SettingsHelper } from "../helpers";
 
+// packages
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 

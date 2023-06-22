@@ -1,5 +1,6 @@
 import { ReactNode, FC } from 'react';
 
+// styles
 import styles from "../styles/main.module.scss";
 
 type Props = {
