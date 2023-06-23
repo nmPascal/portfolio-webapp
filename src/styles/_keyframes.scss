@@ -1,5 +1,20 @@
-@keyframes blink-animation {
+@keyframes blink_animation {
     to {
         visibility: hidden;
+    }
+}
+
+@keyframes text_clip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }

@@ -1,5 +1,5 @@
 // interfaces
-import { ISocialNetwork, IStrings } from "../interfaces";
+import { YOLO, IStrings } from "../interfaces";
 
 // packages
 import { FaXing, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
@@ -8,8 +8,9 @@ import { AiOutlineCodeSandbox, AiFillGithub } from "react-icons/ai";
 
 export const strings: IStrings = {
     // Global
-    me_job: "Web application developer",
-    me_fullName: "Pascal Hector",
+    my_job: "Web application developer",
+    my_fullName: "Pascal Hector",
+    loading_text: "loading",
 
     // Navbar
     navbar_logo_url: "https://code.google.com/images/developers.png",
@@ -20,16 +21,59 @@ export const strings: IStrings = {
 
     // Home
     home_title: "Hey! I Am",
-    home_description: "I'm a web application developer based in France, specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.",
+    home_description:
+        "I'm a web application developer based in France, specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.",
     home_social_networks_title: "Follow me:",
-
 };
 
-export const socialNetworks: ISocialNetwork[] = [
-    { name: "Xing", icon: FaXing, url: "https://www.xing.com/profile/Pascal_Hector2/cv" },
-    { name: "LinkedIn", icon: FaLinkedinIn, url: "https://www.linkedin.com/in/pascal-hector-a637a414b/"},
-    { name: "WhatsApp", icon: FaWhatsapp, url: "https://api.whatsapp.com/send/?phone=%2B33645922614&text&type=phone_number&app_absent=0"},
-    { name: "Indeed", icon: SiIndeed, url: "https://profile.indeed.com/?hl=fr_FR&co=FR&from=gnav-homepage"},
-    { name: "CodeSandBox", icon: AiOutlineCodeSandbox, url: "https://codesandbox.io/u/PascalHcr"},
-    { name: "GitHub", icon: AiFillGithub, url: "https://github.com/nmPascal"}
+export const dataFields: IStrings = {
+    common: `
+        id
+        name
+    `,
+    skills: `
+        type
+        beginning_date
+    `,
+    projects: `
+        primary_language
+        technologies
+        source_code
+        live_demo
+        description
+        image
+    `,
+    social_networks: `
+        icon
+        url
+    `,
+};
+
+export const socialNetworks: YOLO[] = [
+    {
+        name: "Xing",
+        icon: FaXing,
+        url: "https://www.xing.com/profile/Pascal_Hector2/cv",
+    },
+    {
+        name: "LinkedIn",
+        icon: FaLinkedinIn,
+        url: "https://www.linkedin.com/in/pascal-hector-a637a414b/",
+    },
+    {
+        name: "WhatsApp",
+        icon: FaWhatsapp,
+        url: "https://api.whatsapp.com/send/?phone=%2B33645922614&text&type=phone_number&app_absent=0",
+    },
+    {
+        name: "Indeed",
+        icon: SiIndeed,
+        url: "https://profile.indeed.com/?hl=fr_FR&co=FR&from=gnav-homepage",
+    },
+    {
+        name: "CodeSandBox",
+        icon: AiOutlineCodeSandbox,
+        url: "https://codesandbox.io/u/PascalHcr",
+    },
+    { name: "GitHub", icon: AiFillGithub, url: "https://github.com/nmPascal" },
 ];

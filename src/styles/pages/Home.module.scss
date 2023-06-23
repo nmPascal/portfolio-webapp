@@ -7,15 +7,13 @@
         background-color: $color_background_transparent;
 
         .home__presentation {
-            @include flex(
-                $direction: column,
-                $justify: space-evenly,
-                $align: flex-start
-            );
+            @include flex($direction: column, $justify: space-evenly, $align: flex-start);
             @include dimensions($width: 40%);
+
             .home__text {
                 h1 {
                     @include dimensions($width: 80%);
+                    max-width: 400px;
                     font-size: 1.1rem;
                     font-weight: 100;
                     font-family: $font_fira_code;
@@ -25,6 +23,7 @@
 
                 h2 {
                     @include dimensions($width: 80%);
+                    max-width: 400px;
                     margin: 0.5rem 0 1rem;
                     font-size: 2.5rem;
                     color: $color_grey_light2;
@@ -47,12 +46,16 @@
 
             .socialNetworks {
                 @include flex($direction: column, $align: flex-start);
+                @include dimensions($width: 80%);
+                max-width: 400px;
                 
                 h3 {
                     margin: 2rem 0 0.8rem;
                     color: $color_grey_light2;
                     font-weight: lighter;
                 }
+
+                /*TODO add error div*/
 
                 ul {
                     @include flex();
@@ -72,6 +75,9 @@
                             border: 1px solid $color_white;
                             padding: 0.5rem;
                             border-radius: 50%;
+                            img {
+                                width: 20px;
+                            }
                         }
                     }
                 }
@@ -89,13 +95,13 @@
             .home__presentation {
                 @include flex($direction: column, $align: center);
                 @include dimensions($width: 100%);
-                margin: 2rem 0;
+                margin: 3rem 0;
 
                 .home__text {
                     @include dimensions($width: 100%);
                     @include flex($direction: column, $align: center);
 
-                    p {
+                    h1, h2,p {
                         text-align: justify;
                     }
                 }

@@ -1,8 +1,8 @@
 // utils
-import { socialNetworks, strings } from "../utils";
+import { dataFields, socialNetworks, strings } from "../utils";
 
 // interfaces
-import { IRoute, ISettingsHelperProps, ISocialNetwork } from "../interfaces";
+import { IRoute, ISettingsHelperProps, YOLO } from "../interfaces";
 
 // pages
 import { About, Contact, Home, MyWorks, Skills } from "../pages";
@@ -21,7 +21,10 @@ export const SettingsHelper: ISettingsHelperProps = {
     getString: (key: string): string => {
         return strings[key];
     },
-    getSocialNetworks: (): ISocialNetwork[] => {
+    getSocialNetworks: (): YOLO[] => {
         return socialNetworks;
     },
+    getDataFields: (key: string): string => {
+        return dataFields[key];
+    }
 };
