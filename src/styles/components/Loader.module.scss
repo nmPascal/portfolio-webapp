@@ -1,10 +1,16 @@
 .loader {
-    @include dimensions($height: calc(100vh - $navbar_height));
     @include flex();
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
     background-color: $loader_background;
     color: $color_white;
 
     h2 {
+        margin-top: 2rem;
         font-family: $font_helvetica;
         font-weight: 100;
         text-transform: uppercase;
@@ -18,7 +24,7 @@
     &::before {
         content: "";
         position: fixed;
-        top: calc(50% - 40px);
+        top: calc(50% - 70px);
         left: calc(50% - 30px);
         border: 2px solid #45424d !important;
         border-top-color: #e1dfec !important;
