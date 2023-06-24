@@ -71,7 +71,7 @@ export const Home: FC = (): JSX.Element => {
                             </div>
                         </div>
                         <div className={styles.home__image}>
-                            <img src="./assets/images/sitting_on_desk.png" alt="" />
+                            <img src="./assets/images/home_img.png" alt="" />
                         </div>
                     </>
                 )}
