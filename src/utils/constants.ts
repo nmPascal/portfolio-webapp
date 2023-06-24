@@ -11,6 +11,8 @@ export const strings: IStrings = {
     my_job: "Web application developer",
     my_fullName: "Pascal Hector",
     loading_text: "loading",
+    svg_path: "./assets/svg/",
+    images_path: "./assets/images/",
 
     // Navbar
     navbar_logo_url: "https://code.google.com/images/developers.png",
@@ -21,9 +23,14 @@ export const strings: IStrings = {
 
     // Home
     home_title: "Hey! I Am",
-    home_description:
-        "I'm a web application developer based in France, specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.",
+    home_description: "I'm a web application developer based in France, specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.",
     home_social_networks_title: "Follow me:",
+
+    // About
+    about_title: "About me",
+    about_text_title: "I'm a web developer",
+    about_html_text: "<h3>Why hire me for your next projects ?</h3><p>I'm an experienced French web developer. I specialize in creating innovative and user-friendly web applications. With meticulous attention to detail and strong problem-solving skills, I deliver robust and effective solutions.</p><p>I keep abreast of the latest technologies, which enables me to deliver cutting-edge results. Collaboration and adaptability are my strengths, and I thrive in team environments.</p>",
+    about_button_text: "Download CV",
 };
 
 export const dataFields: IStrings = {

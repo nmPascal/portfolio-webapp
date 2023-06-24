@@ -73,11 +73,6 @@
             @include flex();
             margin-left: 2rem;
             button {
-                @include flex();
-                padding: 1rem 1.8rem;
-                border-radius: 5px;
-                font-size: 1.1em;
-                background: $color_green;
                 color: $color_white;
             }
         }

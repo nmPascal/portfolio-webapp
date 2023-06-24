@@ -62,7 +62,10 @@ export const Home: FC = (): JSX.Element => {
                                                     rel="noopener noreferrer"
                                                     title={name}
                                                 >
-                                                    <img src={`./assets/svg/${icon}`} alt={name} />
+                                                    <img
+                                                        src={`${SettingsHelper.getString("svg_path")}${icon}`}
+                                                        alt={name}
+                                                    />
                                                 </NavLink>
                                             </li>
                                         ))}

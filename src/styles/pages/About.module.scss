@@ -1,0 +1,46 @@
+.about {
+    @include flex($justify: space-evenly);
+
+    .about__image {
+        @include dimensions($width: 40%);
+    }
+    
+    .about__text {
+        @include dimensions($width: 40%);
+        h2 {
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: $color_green;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .about__description {
+            margin: .8rem 0;
+
+            h3 {
+                font-size: 1.8rem;
+                color: $color_white;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+
+            p {
+                margin: 1rem 0;
+                font-size: 1rem;
+            }
+        }
+
+        button {
+            @include flex();
+            margin-top: 2rem;
+
+            span {
+                &:first-of-type {
+                    margin-right: .5rem;
+                }
+            }
+        }
+    }
+
+}
