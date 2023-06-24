@@ -79,5 +79,3 @@ export const Home: FC = (): JSX.Element => {
         </div>
     );
 };
-
-//TODO add a loading component

@@ -14,18 +14,15 @@ export const useGraphQLServer = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string>("");
 
-    const getServerData = (requiredData: EDATA) => {
-        setTimeout(async () => {
-            const res = await retrieveGraphQLServerData(requiredData);
+    // TODO: 2 async ??
+    const getServerData = async (requiredData: EDATA) => {
+        const res = await retrieveGraphQLServerData(requiredData);
 
-            if (!res) {
-                setError("Error retrieving data from GraphQL server");
-            }
-            setData(res);
-
-            setLoading(false);
-        }, 1000)
-        // TODO: after 10 seconds, if no data is retrieved, show error message
+        if (!res) {
+            setError("Error retrieving data from GraphQL server");
+        }
+        setData(res);
+        setLoading(false);
     };
 
     const props = {
