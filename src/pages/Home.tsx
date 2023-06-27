@@ -8,20 +8,20 @@ import { isSocialNetworkType } from "../helpers";
 // utils
 import { EDATA } from "../utils";
 
-// hooks
-import { useGraphQLServer } from "../hooks";
+// contexts
+import { useGraphQLDataContext } from "../contexts";
 
 // packages
 import { NavLink } from "react-router-dom";
 
 // components
-import { Loader } from "../components";
+import { ErrorMessage, Loader } from "../components";
 
 // styles
 import styles from "../styles/main.module.scss";
 
 export const Home: FC = (): JSX.Element => {
-    const { data, loading, error, getGraphQLServerData } = useGraphQLServer();
+    const { data, loading, error, getGraphQLServerData } = useGraphQLDataContext();
 
     useEffect(() => {
         getGraphQLServerData(EDATA.SOCIALS);
@@ -52,7 +52,7 @@ export const Home: FC = (): JSX.Element => {
                                 <h3>
                                     {SettingsHelper.getString("home_social_networks_title")}
                                 </h3>
-                                {error.length ? (<div className={styles.error}>{error}</div>) : (
+                                {error.length ? <ErrorMessage message={error} /> : (
                                     <ul>
                                         {isSocialNetworkType(data) && data.map(({id, name, icon, url}) => (
                                             <li key={id}>

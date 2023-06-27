@@ -5,7 +5,7 @@ import { EDATA, client } from "../utils";
 
 // packages
 import { gql } from "@apollo/client";
-import { groupProjectByCat } from "./Helper";
+import { groupDataByProperty } from "./Helper";
 
 const _getGraphQLQuery = (requiredData: EDATA) => {
     return gql`
@@ -24,11 +24,16 @@ export const retrieveGraphQLServerData = async (requiredData: EDATA): Promise<Da
     try {
         const res = await client.query({ query: QUERY });
         const { data } = res;
-        const { projects } = data;
+        const { projects, skills } = data;
     
         if (projects) {
-            return groupProjectByCat(projects);
+            return groupDataByProperty(projects, "primary_language");
         }
+
+        if (skills) {
+            return groupDataByProperty(skills, "type");
+        }
+        
         return data[requiredData];
     } catch (error) {
         console.error("Error retrieving data from GraphQL server: ", error);

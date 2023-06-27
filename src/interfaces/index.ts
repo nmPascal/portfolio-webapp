@@ -1,3 +1,3 @@
 export * from "./ISettingsHelperProps";
-export * from "./IGraphQLServerProps";
+export * from "./IGraphQLDataProviderProps";
 export * from "./IDownloadFilesProps";

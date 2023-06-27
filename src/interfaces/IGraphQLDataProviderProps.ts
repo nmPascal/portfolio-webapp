@@ -27,18 +27,19 @@ export interface IProject {
     image: string;
 }
 
-export interface IProjectData {
+export interface IGroupedData {
     categories: string[];
-    projects: ProjectList;
+    groupedData: SkillList | ProjectList;
 }
 
-export interface IGraphQLServerHookProps {
+export interface IGraphQLDataProviderProps {
     data: DataType;
     loading: boolean;
     error: string;
-    getGraphQLServerData: (requiredData: EDATA) => Promise<void>;
+    getGraphQLServerData: (requiredData: EDATA) => void;
 }
 
 // types
+export type SkillList = Record<string, ISkill[]>;
 export type ProjectList = Record<string, IProject[]>;
-export type DataType = ISocialNetwork[] | ISkill[] | IProjectData | null;
+export type DataType = ISocialNetwork[] | IGroupedData | null;

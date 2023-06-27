@@ -1,6 +1,9 @@
 // utils
 import { client } from "./utils";
 
+// providers
+import { GraphQLDataProvider } from "./providers";
+
 // packages
 import { BrowserRouter } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
@@ -17,7 +20,9 @@ function App() {
                 <Navbar />
                 <AnimatePresence mode="wait">
                     <ApolloProvider client={client}>
-                        <Routes />
+                        <GraphQLDataProvider>
+                            <Routes />
+                        </GraphQLDataProvider>
                     </ApolloProvider>
                 </AnimatePresence>
             </BrowserRouter>

@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
+
+// contexts
+import { GraphQLDataContext } from "../contexts";
 
 // helpers
 import { retrieveGraphQLServerData } from "../helpers";
@@ -7,9 +10,13 @@ import { retrieveGraphQLServerData } from "../helpers";
 import { EDATA } from "../utils";
 
 // interfaces
-import { DataType, IGraphQLServerHookProps} from "../interfaces";
+import { DataType } from "../interfaces";
 
-export const useGraphQLServer = (): IGraphQLServerHookProps => {
+type Props = {
+    children: ReactNode;
+};
+
+export const GraphQLDataProvider = ({ children }: Props) => {
     const [data, setData] = useState<DataType>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string>("");
@@ -31,5 +38,9 @@ export const useGraphQLServer = (): IGraphQLServerHookProps => {
         getGraphQLServerData,
     };
 
-    return props;
+    return (
+        <GraphQLDataContext.Provider value={props}>
+            {children}
+        </GraphQLDataContext.Provider>
+    );
 };
