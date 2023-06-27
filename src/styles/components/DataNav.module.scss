@@ -1,0 +1,32 @@
+.skills__type__nav {
+    @include dimensions($width: 500px);
+    @include flex();
+    position: relative;
+    background: $color_black;
+    color: $color_white;
+    margin: 2rem auto;
+    border-radius: 10px;
+
+    label {
+        @include flex();
+        @include dimensions($width: 100%);
+        padding: 0.5rem;
+        cursor: pointer;
+        z-index: 1;
+
+        input {
+            display: none;
+        }
+    }
+
+    .selected {
+        position: absolute;
+        height: 100%;
+        width: calc(100% / 5);
+        left: 0;
+        top: 0;
+        transition: 0.15s ease;
+        background-color: #59c378;
+    }
+
+}

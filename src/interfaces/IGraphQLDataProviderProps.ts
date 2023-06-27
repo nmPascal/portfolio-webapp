@@ -36,7 +36,9 @@ export interface IGraphQLDataProviderProps {
     data: DataType;
     loading: boolean;
     error: string;
+    selectedCategory: string;
     getGraphQLServerData: (requiredData: EDATA) => void;
+    setSelectedCategory: (category: string) => void;
 }
 
 // types

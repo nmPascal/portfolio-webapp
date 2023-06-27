@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 
 // helpers
 import { isGroupedDataType } from "../helpers";
@@ -15,10 +15,10 @@ import { ErrorMessage, Loader } from "../components";
 
 // styles
 import styles from "../styles/main.module.scss";
+import { DataNav } from "../components/DataNav";
 
 export const Skills: FC = (): JSX.Element => {
     const { data, loading, error, getGraphQLServerData } = useGraphQLDataContext();
-    const [selectedSkillType, setSelectedSkillType] = useState<string>("backend");
 
     useEffect(() => {
         getGraphQLServerData(EDATA.SKILLS);
@@ -32,21 +32,7 @@ export const Skills: FC = (): JSX.Element => {
                 <ErrorMessage message={error} />
             ) : (
                 isGroupedDataType(data) && (
-                    <div className={styles.skills__type__nav}>
-                        <div className={styles.skills__type}>
-                            {data.categories.map((type, idx) => (
-                                <label key={idx}>
-                                    <input
-                                        type="radio"
-                                        value={type}
-                                        checked={selectedSkillType === type}
-                                        onChange={() => setSelectedSkillType(type)}
-                                    />
-                                    <span>{type}</span>
-                                </label>
-                            ))}
-                        </div>
-                    </div>
+                    <DataNav categories={data.categories}/>
                 )
             )}
         </div>

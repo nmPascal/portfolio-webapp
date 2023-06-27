@@ -7,7 +7,9 @@ export const GraphQLDataContext = createContext<IGraphQLDataProviderProps>({
     data: null,
     loading: false,
     error: "",
-    getGraphQLServerData: () => []
+    selectedCategory: "",
+    getGraphQLServerData: () => [],
+    setSelectedCategory: () => "",
 });
 
 export const useGraphQLDataContext = () => useContext(GraphQLDataContext);

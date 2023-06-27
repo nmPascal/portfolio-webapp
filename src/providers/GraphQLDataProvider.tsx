@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 // contexts
 import { GraphQLDataContext } from "../contexts";
@@ -20,6 +20,7 @@ export const GraphQLDataProvider = ({ children }: Props) => {
     const [data, setData] = useState<DataType>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string>("");
+    const [selectedCategory, setSelectedCategory] = useState<string>("");
 
     const getGraphQLServerData = async (requiredData: EDATA) => {
         const res = await retrieveGraphQLServerData(requiredData);
@@ -31,11 +32,17 @@ export const GraphQLDataProvider = ({ children }: Props) => {
         setLoading(false);
     };
 
+    useEffect(() => {
+        console.log('~> ', selectedCategory); //DELETE
+    }, [selectedCategory]);
+
     const props = {
         data,
         loading,
         error,
+        selectedCategory,
         getGraphQLServerData,
+        setSelectedCategory,
     };
 
     return (

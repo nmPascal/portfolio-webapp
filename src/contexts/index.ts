@@ -1,1 +1,1 @@
-export * from "./useGraphQLServerProvider";
+export * from "./GraphQLContext";
