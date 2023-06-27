@@ -7,15 +7,14 @@ import { retrieveGraphQLServerData } from "../helpers";
 import { EDATA } from "../utils";
 
 // interfaces
-import { DataType} from "../interfaces";
+import { DataType, IGraphQLServerHookProps} from "../interfaces";
 
-export const useGraphQLServer = () => {
+export const useGraphQLServer = (): IGraphQLServerHookProps => {
     const [data, setData] = useState<DataType>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string>("");
 
-    // TODO: 2 async ??
-    const getServerData = async (requiredData: EDATA) => {
+    const getGraphQLServerData = async (requiredData: EDATA) => {
         const res = await retrieveGraphQLServerData(requiredData);
 
         if (!res) {
@@ -29,7 +28,7 @@ export const useGraphQLServer = () => {
         data,
         loading,
         error,
-        getServerData,
+        getGraphQLServerData,
     };
 
     return props;

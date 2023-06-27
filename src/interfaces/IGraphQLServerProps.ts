@@ -1,6 +1,3 @@
-// packages
-import { GraphQLError } from "graphql";
-
 // utils
 import { EDATA } from "../utils";
 
@@ -35,11 +32,11 @@ export interface IProjectData {
     projects: ProjectList;
 }
 
-export interface IGraphQLServerProps {
+export interface IGraphQLServerHookProps {
     data: DataType;
     loading: boolean;
-    error: GraphQLError | null;
-    getServerData: (requiredData: EDATA) => Promise<void>;
+    error: string;
+    getGraphQLServerData: (requiredData: EDATA) => Promise<void>;
 }
 
 // types
