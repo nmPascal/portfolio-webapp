@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 // contexts
 import { useGraphQLDataContext } from '../contexts';
@@ -13,13 +13,18 @@ type Props = {
 
 export const DataNav: FC<Props> = ({ categories }: Props): JSX.Element => {
     const { selectedCategory, setSelectedCategory } = useGraphQLDataContext();
+    const [transform, setTransform] = useState<string>('0%');
 
     useEffect(() => {
         setSelectedCategory(categories[0]);
-    }, []);
+    }, [categories]);
+
+    useEffect(() => {
+        setTransform(`${ categories.indexOf(selectedCategory) * 100}%`);
+    }, [selectedCategory]);
   
     return (
-        <div className={styles.skills__type__nav}>
+        <div className={styles.skills__type__nav} style={{width: `${categories.length * 100}px`}}>
             {categories.map((type, idx) => (
                 <label key={idx}>
                     <input
@@ -34,7 +39,8 @@ export const DataNav: FC<Props> = ({ categories }: Props): JSX.Element => {
             <div
                 className={styles.selected}
                 style={{
-                    transform: `translateX(${categories.indexOf(selectedCategory) * 100}%)`,
+                    width: `${100 / categories.length}%`,
+                    transform: `translateX(${transform})`,
                     borderRadius: categories.indexOf(selectedCategory) === 0 ? '5px 0 0 5px' : categories.indexOf(selectedCategory) === categories.length - 1 ? '0 5px 5px 0' : '0',
                 }}
             />

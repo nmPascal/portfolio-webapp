@@ -12,10 +12,10 @@ import { useGraphQLDataContext } from "../contexts";
 
 // components
 import { ErrorMessage, Loader } from "../components";
+import { DataNav } from "../components/DataNav";
 
 // styles
 import styles from "../styles/main.module.scss";
-import { DataNav } from "../components/DataNav";
 
 export const Skills: FC = (): JSX.Element => {
     const { data, loading, error, getGraphQLServerData } = useGraphQLDataContext();

@@ -22,11 +22,9 @@
     .selected {
         position: absolute;
         height: 100%;
-        width: calc(100% / 5);
         left: 0;
         top: 0;
         transition: 0.15s ease;
         background-color: $color_green;
     }
-
 }

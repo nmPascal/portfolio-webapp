@@ -32,10 +32,6 @@ export const GraphQLDataProvider = ({ children }: Props) => {
         setLoading(false);
     };
 
-    useEffect(() => {
-        console.log('~> ', selectedCategory); //DELETE
-    }, [selectedCategory]);
-
     const props = {
         data,
         loading,
