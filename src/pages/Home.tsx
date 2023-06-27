@@ -21,10 +21,10 @@ import { Loader } from "../components";
 import styles from "../styles/main.module.scss";
 
 export const Home: FC = (): JSX.Element => {
-    const { data, loading, error, getServerData } = useGraphQLServer();
+    const { data, loading, error, getGraphQLServerData } = useGraphQLServer();
 
     useEffect(() => {
-        getServerData(EDATA.SOCIALS);
+        getGraphQLServerData(EDATA.SOCIALS);
     }, []);
 
     return (

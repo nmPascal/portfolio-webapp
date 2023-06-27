@@ -105,6 +105,15 @@
             .navbar__github__link {
                 display: none;
             }
+
+            .navbar__button {
+                margin: 0;
+            }
+        }
+
+        @media screen and (max-width: 600px){
+            @include dimensions(initial, calc(100vh - 10px));
+            left: 10px;
         }
     }
 
