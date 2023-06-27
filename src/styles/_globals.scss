@@ -27,9 +27,9 @@ li {
 }
 
 button {
+    @include flex($justify: space-between);
     cursor: pointer;
     border: none;
-    @include flex();
     padding: 1rem 1.8rem;
     border-radius: 5px;
     font-size: 1.1em;

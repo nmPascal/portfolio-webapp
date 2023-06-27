@@ -1,12 +1,17 @@
 // interfaces
 import { IDownloadFilesProps } from "../interfaces";
+import { ECVLANG } from "../utils";
 
 export const useDownloadFiles = (): IDownloadFilesProps => {
 
-    const downloadCV = () => {
+    const downloadCV = (lang: ECVLANG) => {
+        const { toLowerCase } = String.prototype;
+        const fileName = `resume_${toLowerCase.call(lang).substring(0, 2)}.pdf`;
+        const filePath = `./assets/files/${fileName}`;
         const link = document.createElement("a");
-        link.href = "./assets/files/cv.pdf";
-        link.download = "cv.pdf";
+
+        link.href = filePath;
+        link.download = fileName;
         link.click();
     };
 

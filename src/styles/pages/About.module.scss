@@ -31,14 +31,17 @@
             }
         }
 
-        button {
+        .about__download__button {
             @include flex();
             margin-top: 2rem;
+            padding: 1rem;
+            border-radius: 5px;
+            font-size: 1.1em;
+            background: $color_green;
+            color: $color_black;
 
             span {
-                &:first-of-type {
-                    margin-right: .5rem;
-                }
+                margin: 0 .2rem;
             }
         }
     }
