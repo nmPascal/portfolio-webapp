@@ -12,7 +12,7 @@ import { useGraphQLDataContext } from "../contexts";
 
 // components
 import { ErrorMessage, Loader } from "../components";
-import { DataNav } from "../components/DataNav";
+import { DataNav } from "../components";
 
 // styles
 import styles from "../styles/main.module.scss";
