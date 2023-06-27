@@ -1,12 +1,14 @@
-import { DataType, IGroupedData, ISocialNetwork } from "../interfaces";
+import { DataType, IProjectData, ISkillData, ISocialNetwork } from "../interfaces";
 
 export const groupDataByProperty = <T extends { [key: string]: string }>(data: T[], property: keyof T) => {
+    const dataName = property === 'type' ? 'skills' : 'projects';
     const categories = [...new Set(data.map((item) => item[property]))].sort();
     const groupedData = categories.reduce((acc, item) => {
       const filteredData = data.filter((dataItem) => dataItem[property] === item);
       return { ...acc, [item]: filteredData };
     }, {});
-    return { categories, groupedData };
+
+    return { categories, [dataName]: groupedData };
 };
   
 
@@ -17,8 +19,13 @@ export const isSocialNetworkType = (data: DataType): data is ISocialNetwork[] =>
     return false;
 };
 
-export const isGroupedDataType = (data: DataType): data is IGroupedData => {
-    return data !== null && "categories" in data;
+export const isSkillDataType = (data: DataType): data is ISkillData => {
+    return data !== null && "skills" in data;
+};
+
+
+export const isProjectDataType = (data: DataType): data is IProjectData => {
+    return data !== null && "projects" in data;
 };
 
   

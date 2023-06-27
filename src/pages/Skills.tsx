@@ -2,7 +2,7 @@
 import { FC, useEffect } from "react";
 
 // helpers
-import { isGroupedDataType } from "../helpers";
+import { isSkillDataType } from "../helpers";
 
 // utils
 import { EDATA } from "../utils";
@@ -18,11 +18,13 @@ import { DataNav } from "../components";
 import styles from "../styles/main.module.scss";
 
 export const Skills: FC = (): JSX.Element => {
-    const { data, loading, error, getGraphQLServerData } = useGraphQLDataContext();
+    const { data, loading, error, selectedCategory, getGraphQLServerData } = useGraphQLDataContext();
 
     useEffect(() => {
         getGraphQLServerData(EDATA.SKILLS);
     }, []);
+
+    console.log("~> skills", data); //DELETE
 
     return (
         <div className={styles.skills}>
@@ -31,10 +33,20 @@ export const Skills: FC = (): JSX.Element => {
             ) : error.length ? (
                 <ErrorMessage message={error} />
             ) : (
-                isGroupedDataType(data) && (
-                    <DataNav categories={data.categories}/>
+                isSkillDataType(data) && (
+                    <div className={styles.skills__content}>
+                        <DataNav categories={data.categories} />
+                        <div className={styles.skills_grid}>
+                            {data.skills[selectedCategory] &&
+                                data.skills[selectedCategory].map((skill) => (
+                                    <p>{skill.beginning_date}</p>
+                                ))}
+                        </div>
+                    </div>
                 )
             )}
         </div>
     );
 };
+
+//TODO - error on full screen

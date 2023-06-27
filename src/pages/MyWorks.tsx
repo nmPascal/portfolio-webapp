@@ -2,7 +2,7 @@
 import { FC, useEffect } from "react";
 
 // helpers
-import { isGroupedDataType } from "../helpers";
+import { isProjectDataType } from "../helpers";
 
 // utils
 import { EDATA } from "../utils";
@@ -33,7 +33,7 @@ export const MyWorks: FC = (): JSX.Element => {
             ) : error.length ? (
                 <ErrorMessage message={error} />
             ) : (
-                isGroupedDataType(data) && (
+                isProjectDataType(data) && (
                     <DataNav categories={data.categories} />
                 )
             )}

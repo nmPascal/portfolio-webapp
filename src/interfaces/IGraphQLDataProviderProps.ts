@@ -16,6 +16,11 @@ export interface ISkill {
     beginning_date: string;
 }
 
+export interface ISkillData {
+    categories: string[];
+    skills: SkillList;
+}
+
 export interface IProject {
     id: string;
     name: string;
@@ -27,9 +32,9 @@ export interface IProject {
     image: string;
 }
 
-export interface IGroupedData {
+export interface IProjectData {
     categories: string[];
-    groupedData: SkillList | ProjectList;
+    projects: ProjectList;
 }
 
 export interface IGraphQLDataProviderProps {
@@ -44,4 +49,4 @@ export interface IGraphQLDataProviderProps {
 // types
 export type SkillList = Record<string, ISkill[]>;
 export type ProjectList = Record<string, IProject[]>;
-export type DataType = ISocialNetwork[] | IGroupedData | null;
+export type DataType = ISocialNetwork[] | ISkillData | IProjectData | null;
