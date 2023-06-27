@@ -3,7 +3,7 @@
 
     .home__content {
         @include flex($justify: center);
-        @include dimensions($height: 100%);
+        min-height: calc(100vh - $navbar_height);
         background-color: $color_background_transparent;
 
         .home__presentation {
@@ -54,8 +54,6 @@
                     color: $color_grey_light2;
                     font-weight: lighter;
                 }
-
-                /*TODO add error div*/
 
                 ul {
                     @include flex();

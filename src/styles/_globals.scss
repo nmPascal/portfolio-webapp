@@ -37,7 +37,7 @@ button {
 }
 
 .home, .about, .skills, .myWorks, .contact {
-    @include dimensions($height: calc(100vh - $navbar_height));
+    min-height: calc(100vh - $navbar_height);
     margin-top: $navbar_height;
 
     @media screen and (max-width: 850px) {
