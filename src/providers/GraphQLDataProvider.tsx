@@ -22,13 +22,13 @@ export const GraphQLDataProvider = ({ children }: Props) => {
     const [error, setError] = useState<string>("");
     const [selectedCategory, setSelectedCategory] = useState<string>("");
 
-    const getGraphQLServerData = async (requiredData: EDATA) => {
-        const res = await retrieveGraphQLServerData(requiredData);
-
-        if (!res) {
-            setError("Error retrieving data from GraphQL server");
-        }
-        setData(res);
+    const getGraphQLServerData = (requiredData: EDATA) => {
+        retrieveGraphQLServerData(requiredData).then((res) => {
+            if (!res) {
+                setError("Error retrieving data from GraphQL server");
+            }
+            setData(res);
+        });
         setLoading(false);
     };
 

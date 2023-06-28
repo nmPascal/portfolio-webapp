@@ -40,8 +40,7 @@ export const DataNav: FC<Props> = ({ categories }: Props): JSX.Element => {
                 className={styles.selected}
                 style={{
                     width: `${100 / categories.length}%`,
-                    transform: `translateX(${transform})`,
-                    borderRadius: categories.indexOf(selectedCategory) === 0 ? '5px 0 0 5px' : categories.indexOf(selectedCategory) === categories.length - 1 ? '0 5px 5px 0' : '0',
+                    transform: `translate(${transform}, -50%)`,
                 }}
             />
         </div>

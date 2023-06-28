@@ -1,13 +1,16 @@
 // utils
-import { SettingsHelper } from ".";
-import { DataType } from "../interfaces";
 import { EDATA, client } from "../utils";
 
-// packages
-import { gql } from "@apollo/client";
-import { groupDataByProperty } from "./Helper";
+// helpers
+import { SettingsHelper, groupDataByProperty } from ".";
 
-const _getGraphQLQuery = (requiredData: EDATA) => {
+// interfaces
+import { DataType } from "../interfaces";
+
+// packages
+import { DocumentNode, gql } from "@apollo/client";
+
+const _getGraphQLQuery = (requiredData: EDATA): DocumentNode => {
     return gql`
         query {
             ${requiredData} {

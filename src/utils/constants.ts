@@ -1,5 +1,5 @@
 // interfaces
-import { YOLO, IStrings } from "../interfaces";
+import { IStrings } from "../interfaces";
 
 // packages
 import { FaXing, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
@@ -55,32 +55,3 @@ export const dataFields: IStrings = {
         url
     `,
 };
-
-export const socialNetworks: YOLO[] = [
-    {
-        name: "Xing",
-        icon: FaXing,
-        url: "https://www.xing.com/profile/Pascal_Hector2/cv",
-    },
-    {
-        name: "LinkedIn",
-        icon: FaLinkedinIn,
-        url: "https://www.linkedin.com/in/pascal-hector-a637a414b/",
-    },
-    {
-        name: "WhatsApp",
-        icon: FaWhatsapp,
-        url: "https://api.whatsapp.com/send/?phone=%2B33645922614&text&type=phone_number&app_absent=0",
-    },
-    {
-        name: "Indeed",
-        icon: SiIndeed,
-        url: "https://profile.indeed.com/?hl=fr_FR&co=FR&from=gnav-homepage",
-    },
-    {
-        name: "CodeSandBox",
-        icon: AiOutlineCodeSandbox,
-        url: "https://codesandbox.io/u/PascalHcr",
-    },
-    { name: "GitHub", icon: AiFillGithub, url: "https://github.com/nmPascal" },
-];
