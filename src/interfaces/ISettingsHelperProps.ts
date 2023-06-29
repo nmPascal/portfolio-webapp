@@ -7,6 +7,7 @@ export interface ISettingsHelperProps {
     getRoutes: () => IRoute[];
     getString: (key: string) => string;
     getDataFields: (key: string) => string;
+    getSkillsGridColumns: () => string[];
 }
 
 export interface IRoute {

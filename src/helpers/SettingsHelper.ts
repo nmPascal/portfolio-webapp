@@ -1,5 +1,5 @@
 // utils
-import { dataFields, strings } from "../utils";
+import { dataFields, skillsGridColumns, strings } from "../utils";
 
 // interfaces
 import { IRoute, ISettingsHelperProps } from "../interfaces";
@@ -23,5 +23,8 @@ export const SettingsHelper: ISettingsHelperProps = {
     },
     getDataFields: (key: string): string => {
         return dataFields[key];
-    }
+    },
+    getSkillsGridColumns: (): string[] => {
+        return skillsGridColumns;
+    },
 };

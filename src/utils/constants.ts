@@ -55,3 +55,5 @@ export const dataFields: IStrings = {
         url
     `,
 };
+
+export const skillsGridColumns: string[] = ["Years", "1", "3", "5+"];
