@@ -51,6 +51,6 @@ export const calculateExperienceYears = (dateStr: string): number => {
     );
     const yearsDecimal = years + months / 12;
     const formattedYears = Number(yearsDecimal.toFixed(1));
-
-    return formattedYears;
+    
+    return formattedYears > 5 ? 5 : formattedYears;
 };

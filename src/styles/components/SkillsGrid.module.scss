@@ -1,0 +1,55 @@
+.skills__grid {
+    @include dimensions(60%, 55vh);
+    max-height: 350px;
+    position: relative;
+    overflow: hidden;
+    margin: 2rem 0;
+    .years {
+        @include flex($justify: space-between);
+        font-weight: 600;
+        color: $color_green;
+
+        span {
+            &:not(:first-child) {
+                &:before{
+                    content: "";
+                    @include dimensions(1px, 100%);
+                    background: $color_grey;
+                    position: absolute;
+                    transform: translate(2px, 18px);
+                }
+            }
+        }
+    }
+
+    .skills__grid__item {
+        margin: 1rem 0;
+
+        .progress__bar {
+            height: 0.4rem;
+            @include dimensions($height: 0.4rem);
+            background: transparent;
+            border-radius: 50px;
+            margin-top: 0.2rem;
+            position: relative;
+
+            &:after {
+                content: "";
+                @include dimensions(0, 0.4rem);
+                position: absolute;
+                background: $color_green;
+                border-radius: 50px;
+                animation: progress_bar 2s ease-out forwards;
+            }
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        @include dimensions($width: 85%, $height: 50vh);
+
+        .skills__grid__item {
+            font-size: .8rem;
+        }
+
+    }
+}

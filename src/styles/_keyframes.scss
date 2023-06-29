@@ -18,3 +18,9 @@
         transform: rotate(360deg);
     }
 }
+
+@keyframes progress_bar {
+    to {
+        width: 100%;
+    }
+}

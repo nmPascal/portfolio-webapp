@@ -12,7 +12,7 @@ import { useGraphQLDataContext } from "../contexts";
 
 // components
 import { ErrorMessage, Loader } from "../components";
-import { DataNav } from "../components";
+import { CategorySelector } from "../components";
 
 // styles
 import styles from "../styles/main.module.scss";
@@ -34,7 +34,7 @@ export const MyWorks: FC = (): JSX.Element => {
                 <ErrorMessage message={error} />
             ) : (
                 isProjectDataType(data) && (
-                    <DataNav categories={data.categories} />
+                    <CategorySelector categories={data.categories} />
                 )
             )}
         </div>

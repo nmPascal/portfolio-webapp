@@ -1,0 +1,36 @@
+.category__selector {
+    @include flex();
+    position: relative;
+    background: $color_black;
+    color: $color_white;
+    margin: 2rem auto;
+    border-radius: 50px;
+
+    label {
+        @include flex();
+        @include dimensions($width: 100%);
+        padding: 0.2rem;
+        cursor: pointer;
+        z-index: 1;
+
+        input {
+            display: none;
+        }
+    }
+
+    .selected {
+        position: absolute;
+        height: 100%;
+        left: 0;
+        transition: 0.15s ease;
+        background-color: $color_green;
+    }
+
+    @media screen and (max-width: 600px) {
+        width: 90% !important;
+
+        label {
+            font-size: 0.65rem;
+        }
+    }
+}

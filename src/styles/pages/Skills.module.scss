@@ -1,0 +1,9 @@
+.skills {
+    background: url("./assets/images/background.png") no-repeat center/cover;
+    .skills__content {
+        @include flex($direction: column);
+        @include dimensions($width: 100%, $height: calc(100vh - $navbar_height));
+        background-color: $color_background_transparent;
+        padding: 2rem 0;
+    }
+}
