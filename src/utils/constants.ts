@@ -5,6 +5,7 @@ export const strings: IStrings = {
     // Global
     my_job: "Web application developer",
     my_fullName: "Pascal Hector",
+    my_email: "hp.hectorpascal@gmail.com",
     loading_text: "loading",
     svg_path: "./assets/svg/",
     images_path: "./assets/images/",

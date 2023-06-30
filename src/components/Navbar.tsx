@@ -16,13 +16,17 @@ export const Navbar: FC = (): JSX.Element => {
     const [isPageUp, setIsPageUp] = useState<boolean>(false);
     const [isNavOpen, setIsNavOpen] = useState(false);
 
-    const _onScrollHandleNavbarStyle = (): void => {
+    const _onScrollHandleNavbarStyle = () => {
         if (window.scrollY > 0) {
             setIsPageUp(true);
         } else {
             setIsPageUp(false);
         }
     }
+
+    const _sendEmail = () => {
+        window.open(`mailto:${SettingsHelper.getString("my_email")}`);
+    };
 
     useEffect(() => {
         window.addEventListener("scroll", _onScrollHandleNavbarStyle);
@@ -71,7 +75,7 @@ export const Navbar: FC = (): JSX.Element => {
                     </a>
                 </div>
                 <div className={styles.navbar__button}>
-                    <button>
+                    <button onClick={_sendEmail}>
                         {SettingsHelper.getString("navbar_button_text")}
                     </button>
                 </div>
