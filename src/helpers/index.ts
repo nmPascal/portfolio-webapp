@@ -1,3 +1,3 @@
 export * from "./SettingsHelper";
-export * from "./GraphQLQueryHelper";
+export * from "./QueryHelper";
 export * from "./Helper";

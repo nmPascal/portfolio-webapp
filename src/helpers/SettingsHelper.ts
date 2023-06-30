@@ -5,7 +5,7 @@ import { dataFields, skillsGridColumns, strings } from "../utils";
 import { IRoute, ISettingsHelperProps } from "../interfaces";
 
 // pages
-import { About, Contact, Home, MyWorks, Skills } from "../pages";
+import { About, Home, MyWorks, Skills } from "../pages";
 
 
 export const SettingsHelper: ISettingsHelperProps = {
@@ -15,7 +15,6 @@ export const SettingsHelper: ISettingsHelperProps = {
             { name: "About", path: "/about", page: About },
             { name: "Skills", path: "/skills", page: Skills },
             { name: "My Works", path: "/my-works", page: MyWorks },
-            { name: "Contact", path: "/contact", page: Contact },
         ];
     },
     getString: (key: string): string => {
