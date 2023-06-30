@@ -1,11 +1,6 @@
 // interfaces
 import { IStrings } from "../interfaces";
 
-// packages
-import { FaXing, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
-import { SiIndeed } from "react-icons/si";
-import { AiOutlineCodeSandbox, AiFillGithub } from "react-icons/ai";
-
 export const strings: IStrings = {
     // Global
     my_job: "Web application developer",
