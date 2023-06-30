@@ -1,5 +1,5 @@
 import { ECVLANG } from "../utils";
 
-export interface IDownloadFilesProps {
+export interface IDownloadFilesHookProps {
     downloadCV: (lang: ECVLANG) => void;
 }

@@ -1,3 +1,4 @@
 export * from "./ISettingsHelperProps";
 export * from "./IGraphQLDataProviderProps";
-export * from "./IDownloadFilesProps";
+export * from "./IDownloadFilesHookProps";
+export * from "./IJokeApiHookProps";

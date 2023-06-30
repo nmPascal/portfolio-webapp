@@ -1,8 +1,10 @@
 // interfaces
-import { IDownloadFilesProps } from "../interfaces";
+import { IDownloadFilesHookProps } from "../interfaces";
+
+// utils
 import { ECVLANG } from "../utils";
 
-export const useDownloadFiles = (): IDownloadFilesProps => {
+export const useDownloadFiles = (): IDownloadFilesHookProps => {
     // TODO: update resumes
     const downloadCV = (lang: ECVLANG) => {
         const { toLowerCase } = String.prototype;

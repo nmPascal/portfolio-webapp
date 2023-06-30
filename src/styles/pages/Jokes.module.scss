@@ -1,0 +1,78 @@
+.jokes {
+    @include flex();
+    background-color: $color_white;
+    position: relative;
+    .jokes__button__container {
+        @include dimensions(50%, calc(100vh - $navbar_height));
+        @include flex($direction: column);
+
+        img {
+            @include dimensions($width: 60%);
+            margin-bottom: 2rem;
+        }
+
+        button {
+            background-color: $color_orange;
+            color: $color_white;
+
+            &:hover {
+                background-color: darken($color_orange, 10%);
+            }
+        }
+    }
+
+    .jokes__joke {
+        @include dimensions(50%, calc(100vh - $navbar_height));
+        @include flex();
+        background-color: $color_orange;
+        font-size: 1.5rem;
+        color: $color_white;
+        padding: 0 2rem;
+    }
+
+    .jokes__footer {
+        @include dimensions($width: 350px, $height: 50px);
+        @include flex();
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-bottom: 1px solid $color_black;
+
+        .footer__dancing__chuck {
+            @include dimensions($width: 50px, $height: 50px);
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        .jokes__button__container {
+
+            img {
+                @include dimensions($width: 80%);
+            }
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        @include flex($direction: column, $justify: space-between);
+        .jokes__button__container {
+            @include dimensions($width: 100%, $height: calc((100vh - $navbar_height) / 2));
+            img {
+                @include dimensions($width: 50%);
+            }
+
+            button {
+                font-size: .8rem;
+            }
+        }
+
+        .jokes__joke {
+            @include dimensions($width: 100%, $height: calc((100vh - $navbar_height) / 2));
+            font-size: 1rem;
+        }
+
+        .jokes__footer {
+            @include dimensions($width: 70%, $height: 50px);
+        }
+    }
+}

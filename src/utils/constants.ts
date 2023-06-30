@@ -33,6 +33,9 @@ export const strings: IStrings = {
 
     // Jokes
     joke_api_endpoint: "https://api.chucknorris.io/jokes/random?category=dev",
+    joke_image_url: "https://api.chucknorris.io/img/chucknorris_logo_coloured_small@2x.png",
+    joke_image_alt: "Chuck Norris",
+    joke_button_text: "Get a joke",
 };
 
 export const dataFields: IStrings = {
