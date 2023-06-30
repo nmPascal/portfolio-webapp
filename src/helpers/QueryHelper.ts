@@ -39,3 +39,14 @@ export const retrieveGraphQLServerData = async (requiredData: EDATA): Promise<Da
         throw error;
     }
 };
+
+export const retrieveJoke = async (): Promise<string> => {
+    try {
+        const res = await fetch(SettingsHelper.getString("joke_api_endpoint"));
+        const { value } = await res.json();
+        return value;
+    } catch (error) {
+        console.error("Error retrieving joke from API: ", error);
+        throw error;
+    }
+};

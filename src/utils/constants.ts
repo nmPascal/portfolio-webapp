@@ -30,6 +30,9 @@ export const strings: IStrings = {
     // My Works
     link_demo_text: "Live demo",
     link_source_text: "Source code",
+
+    // Jokes
+    joke_api_endpoint: "https://api.chucknorris.io/jokes/random?category=dev",
 };
 
 export const dataFields: IStrings = {
