@@ -7,7 +7,7 @@
         .project__card {
             @include dimensions($width: 450px);
             position: relative;
-            background: $color_card;
+            background: $color_backgound_card;
             border: 1px solid $color_card_border;
             border-radius: 17px;
             padding: 1.8rem;

@@ -1,3 +1,4 @@
+// interface
 import { DataType, IProject, ISkill, ISkillData, ISocialNetwork } from "../interfaces";
 
 export const groupDataByProperty = (webProjects: ISkill[]) => {

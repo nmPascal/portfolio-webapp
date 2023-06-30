@@ -7,7 +7,6 @@ import { IRoute, ISettingsHelperProps } from "../interfaces";
 // pages
 import { About, Home, Jokes, MyWorks, Skills } from "../pages";
 
-
 export const SettingsHelper: ISettingsHelperProps = {
     getRoutes: (): IRoute[] => {
         return [

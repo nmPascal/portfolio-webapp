@@ -7,11 +7,11 @@ import { GraphQLDataProvider } from "./providers";
 // packages
 import { BrowserRouter } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { ApolloProvider } from "@apollo/client";
 
 // components
 import { Layout, Navbar } from "./components";
 import { index as Routes } from "./routes";
-import { ApolloProvider } from "@apollo/client";
 
 function App() {
     return (

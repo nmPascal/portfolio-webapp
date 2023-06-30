@@ -1,11 +1,12 @@
 import { FC } from 'react';
 
-// styles
-import styles from '../styles/main.module.scss';
+// helpers
 import { SettingsHelper } from '../helpers';
 
-export const Loader: FC = (): JSX.Element => {
+// styles
+import styles from '../styles/main.module.scss';
 
+export const Loader: FC = (): JSX.Element => {
     return (
        <div className={styles.loader}>
             <h2 className={`${styles.name_load} ${styles.animate_character}`}>

@@ -1,11 +1,13 @@
 import { FC } from 'react';
 
+// helpers
+import { SettingsHelper } from '../helpers';
+
 // hooks
 import { useJokeApi } from '../hooks';
 
 // styles
 import styles from '../styles/main.module.scss';
-import { SettingsHelper } from '../helpers';
 
 export const Jokes: FC = (): JSX.Element => {
     const { joke, getJoke } = useJokeApi();

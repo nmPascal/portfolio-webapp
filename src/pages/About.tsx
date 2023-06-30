@@ -3,6 +3,9 @@ import { FC } from "react";
 // helpers
 import { SettingsHelper } from "../helpers";
 
+// utils
+import { ECVLANG } from "../utils";
+
 // hooks
 import { useDownloadFiles } from "../hooks";
 
@@ -22,9 +25,7 @@ import { BiDownload } from "react-icons/bi";
 
 // styles
 import styles from "../styles/main.module.scss";
-import { ECVLANG } from "../utils";
 
-//TODO: test on mobile view
 const useStyles = makeStyles({
     menuList: {
         ...shorthands.padding(tokens.spacingHorizontalNone, tokens.spacingVerticalNone),

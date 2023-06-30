@@ -1,8 +1,10 @@
 import { ReactNode, FC, useState, useEffect } from 'react';
 
+// components
+import { Loader } from '.';
+
 // styles
 import styles from "../styles/main.module.scss";
-import { Loader } from '.';
 
 type Props = {
     children: ReactNode;

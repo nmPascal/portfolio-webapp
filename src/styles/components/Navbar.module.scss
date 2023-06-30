@@ -80,7 +80,7 @@
         @media screen and (max-width: 950px) {
             @include flex($direction: column, $justify: space-around);
             @include dimensions(340px, calc(100vh - 20px));
-            background-color: $color_light_background;
+            background-color: $color_background_lighter;
             border-top: 2px solid $color_grey_light;
             border-radius: 2px;
             position: absolute;
