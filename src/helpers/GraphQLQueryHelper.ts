@@ -27,14 +27,10 @@ export const retrieveGraphQLServerData = async (requiredData: EDATA): Promise<Da
     try {
         const res = await client.query({ query: QUERY });
         const { data } = res;
-        const { projects, skills } = data;
-    
-        if (projects) {
-            return groupDataByProperty(projects, "primary_language");
-        }
+        const { skills } = data;
 
         if (skills) {
-            return groupDataByProperty(skills, "type");
+            return groupDataByProperty(skills);
         }
         
         return data[requiredData];

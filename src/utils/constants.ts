@@ -31,6 +31,10 @@ export const strings: IStrings = {
     about_text_title: "I'm a web developer",
     about_html_text: "<h3>Why hire me for your next projects ?</h3><p>I'm an experienced French web developer. I specialize in creating innovative and user-friendly web applications. With meticulous attention to detail and strong problem-solving skills, I deliver robust and effective solutions.</p><p>I keep abreast of the latest technologies, which enables me to deliver cutting-edge results. Collaboration and adaptability are my strengths, and I thrive in team environments.</p>",
     about_button_text: "Download CV",
+
+    // My Works
+    link_demo_text: "Live demo",
+    link_source_text: "Source code",
 };
 
 export const dataFields: IStrings = {
@@ -43,7 +47,6 @@ export const dataFields: IStrings = {
         beginning_date
     `,
     projects: `
-        primary_language
         technologies
         source_code
         live_demo

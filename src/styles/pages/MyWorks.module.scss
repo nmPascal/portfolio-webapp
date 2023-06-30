@@ -1,0 +1,98 @@
+.works {
+    @include flex();
+    .works__swiper {
+        @include dimensions($height: calc(100vh - $navbar_height));
+        max-height: 600px;
+        padding: 1rem 0;
+        .project__card {
+            @include dimensions($width: 450px);
+            position: relative;
+            background: $color_card;
+            border: 1px solid $color_card_border;
+            border-radius: 17px;
+            padding: 1.8rem;
+
+            .project__img {
+                img {
+                    border-radius: 10px;
+                    transition: 0.5s;
+                }
+            }
+
+            .project__languages {
+                background: $gradient_text;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: .8rem;
+                text-transform: uppercase;
+                font-family: $font_fira_code;
+                margin: .5rem 0;
+            }
+
+            .project__description {
+                h3 {
+                    font-size: 1.3rem;
+                    max-height: 100px;
+                    color: $color_green;
+                    margin: 1rem 0;
+                }
+
+                p {
+                    font-size: 13px;
+                    text-align: justify;
+                }
+            }
+
+            .project__links {
+                @include flex($justify: space-between);
+                @include dimensions($width: 100%);
+                position: absolute;
+                left: 0;
+                padding: 0 15px;
+                bottom: 10px;
+                a {
+                    @include flex();
+                    text-transform: uppercase;
+                    font-weight: 100;
+                    font-size: 0.8rem;
+                    color: $color_grey_transparent;
+                    @include flex();
+                    transition: 0.5s;
+
+                    svg {
+                        margin-right: 0.3rem;
+                    }
+
+                    &:hover {
+                        color: $color_green;
+                    }
+                }
+            }
+
+            &:hover {
+                .project__img {
+                    img {
+                        transform: scale(1.06);
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 668px) {
+            .project__card {
+                @include dimensions($width: 70%, $height: 500px);
+                padding: 1.2rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+
+            .project__card {
+                .project__languages {
+                    font-size: .55rem;
+                }
+            }
+        }
+    }
+}

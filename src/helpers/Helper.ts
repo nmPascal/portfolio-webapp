@@ -1,31 +1,15 @@
-import {
-    DataType,
-    IProjectData,
-    ISkillData,
-    ISocialNetwork,
-    ProjectList,
-    SkillList,
-} from "../interfaces";
+import { DataType, IProject, ISkill, ISkillData, ISocialNetwork } from "../interfaces";
 
-export const groupDataByProperty = <T extends { [key: string]: string }>( data: T[], property: keyof T): ISkillData | IProjectData => {
-    const categories = [...new Set(data.map((item) => item[property]))].sort();
-    const groupedData = categories.reduce((acc, item) => {
-        const filteredData = data.filter((dataItem) => dataItem[property] === item);
-        return { ...acc, [item]: filteredData };
+export const groupDataByProperty = (webProjects: ISkill[]) => {
+    const categories = [...new Set(webProjects.map(({ type }) => type))].sort();
+    const skills = categories.reduce((acc, item) => {
+        const filteredProjects = webProjects.filter(({ type }) => type === item);
+        return { ...acc, [item]: filteredProjects };
     }, {});
-
-    if (property === "type") {
-        const skillData: ISkillData = { categories, skills: groupedData as SkillList };
-        return skillData;
-    } else {
-        const projectData: IProjectData = { categories, projects: groupedData as ProjectList };
-        return projectData;
-    }
+    return { categories, skills };
 };
 
-export const isSocialNetworkType = (
-    data: DataType
-): data is ISocialNetwork[] => {
+export const isSocialNetworkType = (data: DataType): data is ISocialNetwork[] => {
     if (Array.isArray(data)) {
         return "icon" in data[0];
     }
@@ -36,8 +20,11 @@ export const isSkillDataType = (data: DataType): data is ISkillData => {
     return data !== null && "skills" in data;
 };
 
-export const isProjectDataType = (data: DataType): data is IProjectData => {
-    return data !== null && "projects" in data;
+export const isProjectDataType = (data: DataType): data is IProject[] => {
+    if (Array.isArray(data)) {
+        return "source_code" in data[0];
+    }
+    return false;
 };
 
 export const calculateExperienceYears = (dateStr: string): number => {

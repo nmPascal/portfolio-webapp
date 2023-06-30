@@ -24,17 +24,11 @@ export interface ISkillData {
 export interface IProject {
     id: string;
     name: string;
-    primary_language: string;
     technologies: string[];
     source_code: string | null;
     live_demo: string | null;
     description: string;
     image: string;
-}
-
-export interface IProjectData {
-    categories: string[];
-    projects: ProjectList;
 }
 
 export interface IGraphQLDataProviderProps {
@@ -49,4 +43,4 @@ export interface IGraphQLDataProviderProps {
 // types
 export type SkillList = Record<string, ISkill[]>;
 export type ProjectList = Record<string, IProject[]>;
-export type DataType = ISocialNetwork[] | ISkillData | IProjectData | null;
+export type DataType = ISocialNetwork[] | ISkillData | IProject[] | null;

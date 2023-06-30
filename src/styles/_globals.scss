@@ -36,7 +36,7 @@ button {
     background: $color_green;
 }
 
-.home, .about, .skills, .myWorks, .contact {
+.home, .about, .skills, .works, .contact {
     min-height: calc(100vh - $navbar_height);
     margin-top: $navbar_height;
 
