@@ -60,7 +60,7 @@ export const MyWorks: FC = (): JSX.Element => {
                                 className={styles.project__card}
                             >
                                 <div className={styles.project__img}>
-                                    <img src="./assets/images/chez_sylvie.png" alt={project.name} />
+                                    <img src={`./assets/images/${project.image}`} alt={project.name} />
                                 </div>
                                 <div className={styles.project__languages}>
                                     {project.technologies.map((language, idx) => (
