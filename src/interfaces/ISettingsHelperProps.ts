@@ -1,8 +1,5 @@
 import { FC } from "react";
 
-// packages
-import { IconType } from "react-icons";
-
 export interface ISettingsHelperProps {
     getRoutes: () => IRoute[];
     getString: (key: string) => string;
