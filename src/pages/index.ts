@@ -3,3 +3,4 @@ export * from "./About";
 export * from "./Skills";
 export * from "./MyWorks";
 export * from "./Jokes";
+export * from "./NotFound";

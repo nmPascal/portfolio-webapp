@@ -37,6 +37,12 @@ export const strings: IStrings = {
     joke_image_url: "https://api.chucknorris.io/img/chucknorris_logo_coloured_small@2x.png",
     joke_image_alt: "Chuck Norris",
     joke_button_text: "Get a joke",
+
+    // 404
+    page_404_title: "You look lost",
+    page_404_text: "The page you are looking for is not available!",
+    page_404_button_text: "Home",
+    page_404_image: "https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif"
 };
 
 export const dataFields: IStrings = {

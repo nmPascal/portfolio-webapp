@@ -1,0 +1,66 @@
+.page_404 {
+    @include flex($direction: column);
+    @include dimensions($height: 100vh);
+    background-color:$color_white;
+    color: darken($color_grey_darker, 20%);
+
+    .page_404__content {
+        width: 50%;
+
+        .page_404__img {
+            position: relative;
+            &::before {
+                content: "404";
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 3rem;
+            }
+        }
+
+        .page_404__text {
+            @include dimensions($height: 20vh);
+            text-align: center;
+            position: absolute;
+            bottom: 10vh;
+            left: 50%;
+            transform: translateX(-50%);
+
+            h3 {
+                font-size: 2rem;
+                font-weight: lighter;
+            }
+
+            .page_404__back {
+                @include flex($direction: column);
+                margin-top: 20px;
+            }
+            
+            button {
+                padding: 10px 20px;
+                background-color: $color_green_darker;
+                font-size: 1.2rem;
+                color: $color_white;
+                font-weight: lighter;
+            }
+        }
+
+        @media screen and (max-width: 780px) {
+            width: 80%;
+        }
+
+        @media screen and (max-width: 550px) {
+            width: 100%;
+
+            h3 {
+                font-size: 1.7rem;
+            }
+
+            button {
+                font-size: 1rem;
+            }
+        }
+        
+    }
+}

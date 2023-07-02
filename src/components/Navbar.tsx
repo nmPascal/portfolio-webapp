@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { FC, useEffect, useRef, useState } from "react";
 
 // helpers
@@ -22,7 +23,12 @@ export const Navbar: FC = (): JSX.Element => {
         } else {
             setIsPageUp(false);
         }
-    }
+    };
+
+    const _hideNavBar = () => {
+        const isNotFound = !SettingsHelper.getRoutes().map(({ path }) => path).includes(location.pathname);
+        return isNotFound;
+    };
 
     const _sendEmail = () => {
         window.open(`mailto:${SettingsHelper.getString("my_email")}`);
@@ -34,13 +40,14 @@ export const Navbar: FC = (): JSX.Element => {
 
     useEffect(() => {
         setIsNavOpen(false);
+        _hideNavBar();
     }, [location]);
 
     return (
         <nav
             ref={navRef}
             className={styles.navbar}
-            style={isPageUp ? {backgroundColor: "#04133a"} : {}}
+            style={!_hideNavBar() && isPageUp ? {backgroundColor: "#04133a"} : _hideNavBar() ? {display: "none"} : {}}
         >
             <div className={styles.navbar__logo}>
                 <img src={SettingsHelper.getString("navbar_logo_url")} alt="Logo" />

@@ -14,7 +14,7 @@ export const SettingsHelper: ISettingsHelperProps = {
             { name: "About", path: "/about", page: About },
             { name: "Skills", path: "/skills", page: Skills },
             { name: "My Works", path: "/my-works", page: MyWorks },
-            { name: "Jokes", path: "/jokes", page: Jokes },
+            { name: "Jokes", path: "/jokes", page: Jokes }
         ];
     },
     getString: (key: string): string => {

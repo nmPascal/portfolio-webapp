@@ -7,6 +7,7 @@ import { SettingsHelper } from "../helpers";
 // packages
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import { NotFound } from "../pages";
 
 export const index: FC = (): JSX.Element => {
     const location = useLocation();
@@ -43,6 +44,7 @@ export const index: FC = (): JSX.Element => {
                         }
                     />
                 ))}
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </AnimatePresence>
     );
