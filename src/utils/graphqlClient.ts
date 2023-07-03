@@ -2,6 +2,6 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 export const client = new ApolloClient({
-    uri: import.meta.env.VITE_API_URL,
+    uri: "https://peridot-prairie-order.glitch.me/graphql",
     cache: new InMemoryCache(),
 });
