@@ -1,6 +1,5 @@
 .skills {
     background: url("https://i.imgur.com/Wro5Fks.png") no-repeat center/cover;
-    height: calc(100vh - ($navbar_height * 2)) !important;
     .skills__content {
         @include flex($direction: column, $justify: space-evenly);
         @include dimensions($width: 100%, $height: calc(100vh - $navbar_height));
