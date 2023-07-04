@@ -41,6 +41,7 @@ export const Navbar: FC = (): JSX.Element => {
     useEffect(() => {
         setIsNavOpen(false);
         _hideNavBar();
+        window.scrollTo(0, 0);
     }, [location]);
 
     return (
