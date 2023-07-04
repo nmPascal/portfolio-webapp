@@ -6,7 +6,7 @@
     bottom: 0;
     right: 0;
     z-index: 1000;
-    background-color: $loader_background;
+    background-color: $color_loader_background;
     color: $color_white;
 
     h2 {
@@ -26,8 +26,8 @@
         position: fixed;
         top: calc(50% - 70px);
         left: calc(50% - 30px);
-        border: 2px solid #45424d !important;
-        border-top-color: #e1dfec !important;
+        border: 2px solid $color_grey_dark !important;
+        border-top-color: $color_loader_border !important;
         border-radius: 50%;
         width: 50px;
         height: 50px;

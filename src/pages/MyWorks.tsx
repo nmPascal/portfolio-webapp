@@ -55,10 +55,7 @@ export const MyWorks: FC = (): JSX.Element => {
                         className={styles.works__swiper}
                     >
                         {data.map((project) => (
-                            <SwiperSlide
-                                key={project.id}
-                                className={styles.project__card}
-                            >
+                            <SwiperSlide key={project.id} className={styles.project__card}>
                                 <div className={styles.project__img}>
                                     <img src={`./assets/images/${project.image}`} alt={project.name} />
                                 </div>

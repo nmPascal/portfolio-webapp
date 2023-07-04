@@ -8,25 +8,29 @@ $font_share_tech: "Share Tech Mono", monospace;
 $font_fira_code: "Fira Code", monospace;
 
 /* Colors */
-$color_black: #333;
-$color_deep_navy_blue: #272f38;
 $color_background: #0d012c;
+$color_loader_background: #0d0d14;
+$color_deep_navy_blue: #272f38;
+$color_black: #333;
 $color_background_transparent: #0d012cbd;
-$loader_background: #0d0d14;
 $color_background_lighter: #04133a;
-$color_grey: #ecedf3;
+$color_backgound_card: #14143A;
+$color_backgound_card_icon: #17203D;
+$color_grey_dark: #45424d;
 $color_grey_darker: #ccc;
-$color_grey_light: #f2f7f9;
 $color_grey_transparent: #cccccc6e;
+$color_grey: #ecedf3;
+$color_grey_light: #f2f7f9;
+$color_loader_border: #e1dfec;
 $color_card_border: rgb(255 255 255 / 0.1);
+$color_white: #fff;
 $color_blue: #0056b3;
 $color_orange: #f15a24;
-$color_green: #59c378;
 $color_green_darker: #39ad31;
+$color_green: #59c378;
 $color_yellow: #eff30e;
 $color_error: firebrick;
-$color_white: #fff;
-$color_backgound_card: #14143A;
+
 
 /* Gradients */
 $gradient_text: linear-gradient(to left, #17c0e9, #c96ddd, #f45162);

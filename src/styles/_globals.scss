@@ -11,6 +11,7 @@ body {
     font-size: .88rem;
     user-select: none;
     transition: background .5s ease;
+    overflow-x: hidden;
 }
 
 img {
@@ -37,6 +38,7 @@ button {
 }
 
 .home, .about, .skills, .works, .jokes {
+    width: 100%;
     min-height: calc(100vh - $navbar_height);
     margin-top: $navbar_height;
 

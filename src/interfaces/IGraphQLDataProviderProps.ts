@@ -12,6 +12,7 @@ export interface ISocialNetwork {
 export interface ISkill {
     id: string;
     name: string;
+    icon: string;
     type: string;
     beginning_date: string;
 }

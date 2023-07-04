@@ -1,7 +1,7 @@
 .category__selector {
     @include flex();
     position: relative;
-    background: $color_black;
+    background-color: $color_black;
     color: $color_white;
     margin: 2rem auto;
     border-radius: 50px;
@@ -23,7 +23,7 @@
         height: 100%;
         left: 0;
         transition: 0.15s ease;
-        background-color: $color_green;
+        background: $gradient_text;
     }
 
     @media screen and (max-width: 600px) {
