@@ -69,7 +69,7 @@
 
     @media screen and (max-width: 640px) {
         .skills__content {
-            @include flex($direction: column, $justify: inherit);
+            // @include flex($direction: column, $justify: inherit);
 
             .skills__swiper {
                 margin-top: 3rem;
