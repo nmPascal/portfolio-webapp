@@ -5,7 +5,6 @@ import { IDownloadFilesHookProps } from "../interfaces";
 import { ECVLANG } from "../utils";
 
 export const useDownloadFiles = (): IDownloadFilesHookProps => {
-    // TODO: update resumes
     const downloadCV = (lang: ECVLANG) => {
         const { toLowerCase } = String.prototype;
         const fileName = `resume_${toLowerCase.call(lang).substring(0, 2)}.pdf`;

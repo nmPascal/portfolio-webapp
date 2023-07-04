@@ -7,20 +7,16 @@ import {
     ISocialNetwork,
 } from "../interfaces";
 
-export const groupDataByProperty = (webProjects: ISkill[]) => {
+export const groupDataByProperty = (webProjects: ISkill[]): ISkillData => {
     const categories = [...new Set(webProjects.map(({ type }) => type))].sort();
     const skills = categories.reduce((acc, item) => {
-        const filteredProjects = webProjects.filter(
-            ({ type }) => type === item
-        );
+        const filteredProjects = webProjects.filter(({ type }) => type === item);
         return { ...acc, [item]: filteredProjects };
     }, {});
     return { categories, skills };
 };
 
-export const isSocialNetworkType = (
-    data: DataType
-): data is ISocialNetwork[] => {
+export const isSocialNetworkType = (data: DataType): data is ISocialNetwork[] => {
     if (Array.isArray(data)) {
         return "icon" in data[0];
     }
@@ -38,20 +34,24 @@ export const isProjectDataType = (data: DataType): data is IProject[] => {
     return false;
 };
 
-const _calculateXpYears = (dateStr: string) => {
-    const beginning = JSON.stringify(dateStr);
-    const now = new Date();
-    const diff = now.getTime() - new Date(beginning).getTime();
-    const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
-    const months = Math.floor(
-        (diff % (1000 * 60 * 60 * 24 * 365.25)) /
-            (1000 * 60 * 60 * 24 * (365.25 / 12))
-    );
-    const yearsDecimal = years + months / 12;
-    return Number(yearsDecimal.toFixed(1));
+const _calculateXpYears = (dateStr: string): number => {
+    const currentDate: Date = new Date();
+    const [year, month] = dateStr.split("-").map(Number);
+    const inputDate: Date = new Date(year, month - 1);
+
+    const diffYears: number =
+        currentDate.getFullYear() - inputDate.getFullYear();
+    if (
+        currentDate.getMonth() < inputDate.getMonth() ||
+        (currentDate.getMonth() === inputDate.getMonth() &&
+            currentDate.getDate() < inputDate.getDate())
+    ) {
+        return diffYears - 1;
+    }
+    return diffYears;
 };
 
-export const getXpStatus = (dateStr: string) => {
+export const getXpStatus = (dateStr: string): { status: string, color: string} => {
     const xpYears = _calculateXpYears(dateStr);
 
     if (xpYears < 1) {
