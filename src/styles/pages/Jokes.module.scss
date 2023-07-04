@@ -1,9 +1,9 @@
 .jokes {
     @include flex();
-    @include dimensions($height: calc(100vh - $navbar_height));
-
+    height: calc(100vh - $navbar_height) !important;
     background-color: $color_white;
     position: relative;
+    
     .jokes__button__container {
         @include dimensions(50%, calc(100vh - $navbar_height));
         @include flex($direction: column);
