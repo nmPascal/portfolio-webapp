@@ -71,41 +71,44 @@
         .skills__content {
             @include flex($direction: column, $justify: inherit);
 
-            .skill__card {
-                @include dimensions($height: 250px);
-                @include flex(
-                    $direction: column,
-                    $justify: flex-start,
-                    $align: center
-                );
-                position: relative;
-                background: $color_backgound_card;
-                border: 1px solid $color_card_border;
-                border-radius: 17px;
-                padding: 1.8rem;
-
-                .skill__icon {
-                    @include dimensions(100px, 100px);
-                    @include flex();
-                    border-radius: 50%;
-                    background-color: $color_backgound_card_icon;
-
-                    img {
-                        @include dimensions($width: 60%);
-                    }
-                }
-
-                .skill__name {
-                    margin: 1.5rem 0;
-                    font-size: 1.3rem;
-                }
-
-                .skill__date {
-                    position: absolute;
-                    bottom: 1rem;
+            .skills__swiper {
+                margin-top: 2rem;
+                .skill__card {
+                    @include dimensions($height: 250px);
+                    @include flex(
+                        $direction: column,
+                        $justify: flex-start,
+                        $align: center
+                    );
+                    position: relative;
+                    background: $color_backgound_card;
                     border: 1px solid $color_card_border;
-                    padding: 0.1rem 1.5rem;
-                    border-radius: 50px;
+                    border-radius: 17px;
+                    padding: 1.8rem;
+
+                    .skill__icon {
+                        @include dimensions(100px, 100px);
+                        @include flex();
+                        border-radius: 50%;
+                        background-color: $color_backgound_card_icon;
+
+                        img {
+                            @include dimensions($width: 60%);
+                        }
+                    }
+
+                    .skill__name {
+                        margin: 1.5rem 0;
+                        font-size: 1.3rem;
+                    }
+
+                    .skill__date {
+                        position: absolute;
+                        bottom: 1rem;
+                        border: 1px solid $color_card_border;
+                        padding: 0.1rem 1.5rem;
+                        border-radius: 50px;
+                    }
                 }
             }
         }
