@@ -1,5 +1,7 @@
 .jokes {
     @include flex();
+    @include dimensions($height: calc(100vh - $navbar_height));
+
     background-color: $color_white;
     position: relative;
     .jokes__button__container {
