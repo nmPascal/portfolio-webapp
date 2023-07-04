@@ -72,6 +72,7 @@
             @include flex($direction: column, $justify: inherit);
 
             .skills__swiper {
+                margin-top: 3rem;
                 .skill__card {
                     @include dimensions($height: 250px);
                     @include flex(
