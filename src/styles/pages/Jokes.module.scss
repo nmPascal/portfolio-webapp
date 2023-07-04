@@ -1,6 +1,6 @@
 .jokes {
     @include flex();
-    height: calc(100vh - $navbar_height) !important;
+    height: calc(100vh - ($navbar_height * 2)) !important;
     background-color: $color_white;
     position: relative;
     
