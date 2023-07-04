@@ -72,9 +72,6 @@
             @include flex($direction: column, $justify: inherit);
 
             .skills__swiper {
-                border: 1px solid #f00;
-                @include dimensions($height: 50vh);
-
                 .skill__card {
                     @include dimensions($height: 250px);
                     @include flex(
