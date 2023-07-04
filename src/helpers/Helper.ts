@@ -1,16 +1,26 @@
 // interface
-import { DataType, IProject, ISkill, ISkillData, ISocialNetwork } from "../interfaces";
+import {
+    DataType,
+    IProject,
+    ISkill,
+    ISkillData,
+    ISocialNetwork,
+} from "../interfaces";
 
 export const groupDataByProperty = (webProjects: ISkill[]) => {
     const categories = [...new Set(webProjects.map(({ type }) => type))].sort();
     const skills = categories.reduce((acc, item) => {
-        const filteredProjects = webProjects.filter(({ type }) => type === item);
+        const filteredProjects = webProjects.filter(
+            ({ type }) => type === item
+        );
         return { ...acc, [item]: filteredProjects };
     }, {});
     return { categories, skills };
 };
 
-export const isSocialNetworkType = (data: DataType): data is ISocialNetwork[] => {
+export const isSocialNetworkType = (
+    data: DataType
+): data is ISocialNetwork[] => {
     if (Array.isArray(data)) {
         return "icon" in data[0];
     }
@@ -28,7 +38,7 @@ export const isProjectDataType = (data: DataType): data is IProject[] => {
     return false;
 };
 
-export const calculateExperienceYears = (dateStr: string): number => {
+const _calculateXpYears = (dateStr: string) => {
     const beginning = JSON.stringify(dateStr);
     const now = new Date();
     const diff = now.getTime() - new Date(beginning).getTime();
@@ -38,7 +48,19 @@ export const calculateExperienceYears = (dateStr: string): number => {
             (1000 * 60 * 60 * 24 * (365.25 / 12))
     );
     const yearsDecimal = years + months / 12;
-    const formattedYears = Number(yearsDecimal.toFixed(1));
-    
-    return formattedYears > 5 ? 5 : formattedYears;
+    return Number(yearsDecimal.toFixed(1));
+};
+
+export const getXpStatus = (dateStr: string) => {
+    const xpYears = _calculateXpYears(dateStr);
+
+    if (xpYears < 1) {
+        return { status: "Beginner", color: "#E6CC79" };
+    } else if (xpYears < 2) {
+        return { status: "Intermediate", color: "#4F86F7" };
+    } else if (xpYears < 3) {
+        return { status: "Advanced", color: "#34C759" };
+    } else {
+        return { status: "Expert", color: "#FF2D55" };
+    }
 };
