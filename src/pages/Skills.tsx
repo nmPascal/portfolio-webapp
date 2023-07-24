@@ -39,13 +39,14 @@ export const Skills: FC = (): JSX.Element => {
 
     return (
         <div className={styles.skills}>
+            <div className={styles.skills__content}>
             {loading ? (
                 <Loader />
             ) : error.length ? (
                 <ErrorMessage message={error} />
             ) : (
                 isSkillDataType(data) && (
-                    <div className={styles.skills__content}>
+                    <>
                         <CategorySelector categories={data.categories} />
                         <Swiper
                             effect={'cube'}
@@ -76,9 +77,9 @@ export const Skills: FC = (): JSX.Element => {
                                 </SwiperSlide>
                             ))}
                         </Swiper>
-                    </div>
-                )
-            )}
+                    </>
+                ))}
+                </div>
         </div>
     );
 };
