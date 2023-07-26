@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "start": "concurrently \"cd ../portfolio-graphql-server & yarn dev\" \"yarn dev\"",
+    "start": "concurrently \"cd ../portfolio-local-server & yarn dev\" \"yarn dev\"",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"

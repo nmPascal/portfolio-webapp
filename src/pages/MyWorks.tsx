@@ -12,7 +12,7 @@ import { useGraphQLDataContext } from "../contexts";
 
 // packages
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow } from "swiper";
+import { EffectCoverflow } from "swiper/modules";
 import { BsLaptop, BsGithub } from "react-icons/bs";
 
 // components

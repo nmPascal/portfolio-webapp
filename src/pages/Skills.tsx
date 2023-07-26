@@ -12,7 +12,7 @@ import { useGraphQLDataContext } from "../contexts";
 
 // packages
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCube, Pagination } from 'swiper';
+import { EffectCube, Pagination } from 'swiper/modules';
 
 // components
 import { CategorySelector, ErrorMessage, Loader } from "../components";
