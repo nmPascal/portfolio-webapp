@@ -12,7 +12,7 @@
             @include dimensions($width: 280px);
 
             .skill__card {
-                @include dimensions($height: 300px);
+                @include dimensions($height: 350px);
                 @include flex(
                     $direction: column,
                     $justify: flex-start,

@@ -62,7 +62,7 @@ export const Skills: FC = (): JSX.Element => {
                                     <div className={styles.skill__name}>
                                         <h3>{name}</h3>
                                     </div>
-                                    <div className={styles.skill__date}>
+                                    <div className={styles.skill__exp}>
                                         <p style={{color: getXpStatus(beginning_date).color}}>
                                             {getXpStatus(beginning_date).status}
                                         </p>
