@@ -12,7 +12,7 @@ import { useGraphQLDataContext } from "../contexts";
 
 // packages
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCube, Pagination } from 'swiper/modules';
+import { EffectCards } from 'swiper/modules';
 
 // components
 import { CategorySelector, ErrorMessage, Loader } from "../components";
@@ -20,8 +20,7 @@ import { CategorySelector, ErrorMessage, Loader } from "../components";
 // styles
 import styles from "../styles/main.module.scss";
 import 'swiper/css';
-import 'swiper/css/effect-cube';
-import 'swiper/css/pagination';
+import 'swiper/css/effect-cards';
 
 export const Skills: FC = (): JSX.Element => {
     const { data, loading, error, selectedCategory, getGraphQLServerData } = useGraphQLDataContext();
@@ -48,17 +47,11 @@ export const Skills: FC = (): JSX.Element => {
                 isSkillDataType(data) && (
                     <>
                         <CategorySelector categories={data.categories} />
+
                         <Swiper
-                            effect={'cube'}
+                            effect={'cards'}
                             grabCursor={true}
-                            cubeEffect={{
-                                shadow: true,
-                                slideShadows: true,
-                                shadowOffset: 20,
-                                shadowScale: 0.94,
-                            }}
-                            pagination={true}
-                            modules={[EffectCube, Pagination]}
+                            modules={[EffectCards]}
                             className={styles.skills__swiper}
                         >
                             {data.skills[selectedCategory] && data.skills[selectedCategory].map(({id, name, icon, beginning_date}) => (
