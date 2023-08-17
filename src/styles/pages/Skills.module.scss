@@ -12,7 +12,7 @@
             @include dimensions($width: 280px);
 
             .skill__card {
-                @include dimensions($height: 350px);
+                @include dimensions($height: 300px);
                 @include flex(
                     $direction: column,
                     $justify: flex-start,
@@ -40,7 +40,7 @@
                     font-size: 1.3rem;
                 }
 
-                .skill__date {
+                .skill__exp {
                     position: absolute;
                     bottom: 2rem;
                     border: 1px solid $color_card_border;
@@ -74,7 +74,7 @@
             .skills__swiper {
                 margin-top: 3rem;
                 .skill__card {
-                    @include dimensions($height: 250px);
+                    @include dimensions($height: 280px);
                     @include flex(
                         $direction: column,
                         $justify: flex-start,
@@ -102,7 +102,7 @@
                         font-size: 1.3rem;
                     }
 
-                    .skill__date {
+                    .skill__exp {
                         position: absolute;
                         bottom: 2rem;
                         border: 1px solid $color_card_border;
