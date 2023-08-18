@@ -47,7 +47,6 @@ export const Skills: FC = (): JSX.Element => {
                 isSkillDataType(data) && (
                     <>
                         <CategorySelector categories={data.categories} />
-
                         <Swiper
                             effect={'cards'}
                             grabCursor={true}
